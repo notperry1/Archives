@@ -1,0 +1,3301 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>The Vortex Coalition - staff_announcements</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+
+    <style>
+        /* General */
+
+@font-face {
+    font-family: Whitney;
+    src: url(https://discordapp.com/assets/6c6374bad0b0b6d204d8d6dc4a18d820.woff);
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: Whitney;
+    src: url(https://discordapp.com/assets/e8acd7d9bf6207f99350ca9f9e23b168.woff);
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: Whitney;
+    src: url(https://discordapp.com/assets/3bdef1251a424500c1b3a78dea9b7e57.woff);
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: Whitney;
+    src: url(https://discordapp.com/assets/be0060dafb7a0e31d2a1ca17c0708636.woff);
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: Whitney;
+    src: url(https://discordapp.com/assets/8e12fb4f14d9c4592eb8ec9f22337b04.woff);
+    font-weight: 700;
+}
+
+body {
+    font-family: "Whitney", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 17px;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+img {
+    object-fit: contain;
+}
+
+.markdown {
+    white-space: pre-wrap;
+    line-height: 1.3;
+    overflow-wrap: break-word;
+}
+
+.spoiler {
+    border-radius: 3px;
+}
+
+.quote {
+    margin: 0.5em 0;
+    padding-left: 0.6em;
+    border-left: 4px solid;
+    border-radius: 3px;
+}
+
+.pre {
+    font-family: "Consolas", "Courier New", Courier, monospace;
+}
+
+.pre--multiline {
+    margin-top: 0.25em;
+    padding: 0.5em;
+    border: 2px solid;
+    border-radius: 5px;
+}
+
+.pre--inline {
+    padding: 2px;
+    border-radius: 3px;
+    font-size: 0.85em;
+}
+
+.mention {
+    border-radius: 3px;
+    padding: 0 2px;
+    color: #7289da;
+    background: rgba(114, 137, 218, .1);
+    font-weight: 500;
+}
+
+.emoji {
+    width: 1.25em;
+    height: 1.25em;
+    margin: 0 0.06em;
+    vertical-align: -0.4em;
+}
+
+.emoji--small {
+    width: 1em;
+    height: 1em;
+}
+
+.emoji--large {
+    width: 2.8em;
+    height: 2.8em;
+}
+
+/* Preamble */
+
+.preamble {
+    display: grid;
+    margin: 0 0.3em 0.6em 0.3em;
+    max-width: 100%;
+    grid-template-columns: auto 1fr;
+}
+
+.preamble__guild-icon-container {
+    grid-column: 1;
+}
+
+.preamble__guild-icon {
+    max-width: 88px;
+    max-height: 88px;
+}
+
+.preamble__entries-container {
+    grid-column: 2;
+    margin-left: 0.6em;
+}
+
+.preamble__entry {
+    font-size: 1.4em;
+}
+
+.preamble__entry--small {
+    font-size: 1em;
+}
+
+/* Chatlog */
+
+.chatlog {
+    max-width: 100%;
+}
+
+.chatlog__message-group {
+    display: grid;
+    margin: 0 0.6em;
+    padding: 0.9em 0;
+    border-top: 1px solid;
+    grid-template-columns: auto 1fr;
+}
+
+.chatlog__author-avatar-container {
+    grid-column: 1;
+    width: 40px;
+    height: 40px;
+}
+
+.chatlog__author-avatar {
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+}
+
+.chatlog__messages {
+    grid-column: 2;
+    margin-left: 1.2em;
+    min-width: 50%;
+}
+
+.chatlog__author-name {
+    font-weight: 500;
+}
+
+.chatlog__timestamp {
+    margin-left: 0.3em;
+    font-size: 0.75em;
+}
+
+.chatlog__message {
+    padding: 0.1em 0.3em;
+    margin: 0 -0.3em;
+    background-color: transparent;
+    transition: background-color 1s ease;
+}
+
+.chatlog__content {
+    font-size: 0.95em;
+    word-wrap: break-word;
+}
+
+.chatlog__edited-timestamp {
+    margin-left: 0.15em;
+    font-size: 0.8em;
+}
+
+.chatlog__attachment-thumbnail {
+    margin-top: 0.3em;
+    max-width: 50%;
+    max-height: 500px;
+    border-radius: 3px;
+}
+
+.chatlog__embed {
+    display: flex;
+    margin-top: 0.3em;
+    max-width: 520px;
+}
+
+.chatlog__embed-color-pill {
+    flex-shrink: 0;
+    width: 0.25em;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+}
+
+.chatlog__embed-content-container {
+    display: flex;
+    flex-direction: column;
+    padding: 0.5em 0.6em;
+    border: 1px solid;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+
+.chatlog__embed-content {
+    display: flex;
+    width: 100%;
+}
+
+.chatlog__embed-text {
+    flex: 1;
+}
+
+.chatlog__embed-author {
+    display: flex;
+    margin-bottom: 0.3em;
+    align-items: center;
+}
+
+.chatlog__embed-author-icon {
+    margin-right: 0.5em;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+}
+
+.chatlog__embed-author-name {
+    font-size: 0.875em;
+    font-weight: 600;
+}
+
+.chatlog__embed-title {
+    margin-bottom: 0.2em;
+    font-size: 0.875em;
+    font-weight: 600;
+}
+
+.chatlog__embed-description {
+    font-weight: 500;
+    font-size: 0.85em;
+}
+
+.chatlog__embed-fields {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.chatlog__embed-field {
+    flex: 0;
+    min-width: 100%;
+    max-width: 506px;
+    padding-top: 0.6em;
+    font-size: 0.875em;
+}
+
+.chatlog__embed-field--inline {
+    flex: 1;
+    flex-basis: auto;
+    min-width: 150px;
+}
+
+.chatlog__embed-field-name {
+    margin-bottom: 0.2em;
+    font-weight: 600;
+}
+
+.chatlog__embed-field-value {
+    font-weight: 500;
+}
+
+.chatlog__embed-thumbnail {
+    flex: 0;
+    margin-left: 1.2em;
+    max-width: 80px;
+    max-height: 80px;
+    border-radius: 3px;
+}
+
+.chatlog__embed-image-container {
+    margin-top: 0.6em;
+}
+
+.chatlog__embed-image {
+    max-width: 500px;
+    max-height: 400px;
+    border-radius: 3px;
+}
+
+.chatlog__embed-footer {
+    margin-top: 0.6em;
+}
+
+.chatlog__embed-footer-icon {
+    margin-right: 0.2em;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    vertical-align: middle;
+}
+
+.chatlog__embed-footer-text {
+    font-size: 0.75em;
+    font-weight: 500;
+}
+
+.chatlog__reactions {
+    display: flex;
+}
+
+.chatlog__reaction {
+    display: flex;
+    align-items: center;
+    margin: 0.35em 0.1em 0.1em 0.1em;
+    padding: 0.2em 0.35em;
+    border-radius: 3px;
+}
+
+.chatlog__reaction-count {
+    min-width: 9px;
+    margin-left: 0.35em;
+    font-size: 0.875em;
+}
+
+.chatlog__bot-tag {
+    position: relative;
+    top: -.2em;
+    margin-left: 0.3em;
+    padding: 0.05em 0.3em;
+    border-radius: 3px;
+    vertical-align: middle;
+    line-height: 1.3;
+    background: #7289da;
+    color: #ffffff;
+    font-size: 0.625em;
+    font-weight: 500;
+}
+
+/* Postamble */
+
+.postamble {
+    margin: 1.4em 0.3em 0.6em 0.3em;
+    padding: 1em;
+    border-top: 1px solid;
+}
+    </style>
+    <style>
+        /* General */
+
+body {
+    background-color: #36393e;
+    color: #dcddde;
+}
+
+a {
+    color: #0096cf;
+}
+
+.spoiler {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.quote {
+    border-color: #4f545c;
+}
+
+.pre {
+    background-color: #2f3136 !important;
+}
+
+.pre--multiline {
+    border-color: #282b30 !important;
+    color: #b9bbbe !important;
+}
+
+/* === Preamble === */
+
+.preamble__entry {
+    color: #ffffff;
+}
+
+/* Chatlog */
+
+.chatlog__message-group {
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+.chatlog__author-name {
+    color: #ffffff;
+}
+
+.chatlog__timestamp {
+    color: rgba(255, 255, 255, 0.2);
+}
+
+.chatlog__message--highlighted {
+    background-color: rgba(114, 137, 218, 0.2) !important;
+}
+
+.chatlog__message--pinned {
+    background-color: rgba(249, 168, 37, 0.05);
+}
+
+.chatlog__edited-timestamp {
+    color: rgba(255, 255, 255, 0.2);
+}
+
+.chatlog__embed-color-pill--default {
+    background-color: rgba(79, 84, 92, 1);
+}
+
+.chatlog__embed-content-container {
+    background-color: rgba(46, 48, 54, 0.3);
+    border-color: rgba(46, 48, 54, 0.6);
+}
+
+.chatlog__embed-author-name {
+    color: #ffffff;
+}
+
+.chatlog__embed-author-name-link {
+    color: #ffffff;
+}
+
+.chatlog__embed-title {
+    color: #ffffff;
+}
+
+.chatlog__embed-description {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.chatlog__embed-field-name {
+    color: #ffffff;
+}
+
+.chatlog__embed-field-value {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.chatlog__embed-footer {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.chatlog__reaction {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.chatlog__reaction-count {
+    color: rgba(255, 255, 255, 0.3);
+}
+
+/* Postamble */
+
+.postamble {
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+.postamble__entry {
+    color: #ffffff;
+}
+    </style>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/solarized-dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.pre--multiline').forEach(block => hljs.highlightBlock(block));
+        });
+    </script>
+
+    <script>
+        function scrollToMessage(event, id) {
+            var element = document.getElementById('message-' + id);
+
+            if (element) {
+                event.preventDefault();
+
+                element.classList.add('chatlog__message--highlighted');
+
+                window.scrollTo({
+                    top: element.getBoundingClientRect().top - document.body.getBoundingClientRect().top - (window.innerHeight / 2),
+                    behavior: 'smooth'
+                });
+
+                window.setTimeout(function() {
+                    element.classList.remove('chatlog__message--highlighted');
+                }, 2000);
+            }
+        }
+    </script>
+</head>
+<body>
+
+<div class="preamble">
+    <div class="preamble__guild-icon-container">
+        <img class="preamble__guild-icon" src="https://cdn.discordapp.com/icons/270105270217211905/a_32ee399fff63cde3b7d7a54b2158f906.png" alt="Guild icon" />
+    </div>
+    <div class="preamble__entries-container">
+        <div class="preamble__entry">The Vortex Coalition</div>
+        <div class="preamble__entry">staff_announcements</div>
+
+            <div class="preamble__entry preamble__entry--small">basically Creditor announcements</div>
+
+    </div>
+</div>
+
+<div class="chatlog">
+    <div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/embed/avatars/0.png" alt="Avatar" />
+    </div>
+    <div class="chatlog__messages">
+    <span class="chatlog__author-name" title="Deleted User#0000" data-user-id="456226577798135808" style="color: ">Deleted User</span>
+
+
+        <span class="chatlog__timestamp">31-May-18 02:26 AM</span>
+
+            <div class="chatlog__message chatlog__message--pinned" data-message-id="451632551594033153" id="message-451632551594033153">
+                <div class="chatlog__content">
+                    <span class="markdown">Things get drowned out in <span class="mention">#the_lounge</span> and not everyone checks pins all the time. 
+
+This chat will be used for important announcements that all Staff should be aware of.</span>
+
+                </div>
+
+
+
+            </div>
+    </div>
+</div><div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/embed/avatars/0.png" alt="Avatar" />
+    </div>
+    <div class="chatlog__messages">
+    <span class="chatlog__author-name" title="Deleted User#0000" data-user-id="456226577798135808" style="color: ">Deleted User</span>
+
+
+        <span class="chatlog__timestamp">01-Jun-18 07:45 AM</span>
+
+            <div class="chatlog__message " data-message-id="452075172653039626" id="message-452075172653039626">
+                <div class="chatlog__content">
+                    <span class="markdown">Staff with <span class="mention" style="color: #1F8B4C; background-color: rgba(31, 139, 76, 0.1); font-weight: 400;">@Creditor</span> perms please be aware of the new announcement in <span class="mention">#member_announcements</span>.</span>
+
+                </div>
+
+
+
+            </div>
+    </div>
+</div><div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/embed/avatars/0.png" alt="Avatar" />
+    </div>
+    <div class="chatlog__messages">
+    <span class="chatlog__author-name" title="Deleted User#0000" data-user-id="456226577798135808" style="color: ">Deleted User</span>
+
+
+        <span class="chatlog__timestamp">01-Jun-18 11:58 PM</span>
+
+            <div class="chatlog__message " data-message-id="452320039056703518" id="message-452320039056703518">
+                <div class="chatlog__content">
+                    <span class="markdown">Should we impose regulations so that Vendors like Jumpy who sell their items for super cheap can&#39;t crash the VoCoin economy?</span>
+
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="452320105809051673" id="message-452320105809051673">
+                <div class="chatlog__content">
+                    <span class="markdown">Or should we keep it free market? Discuss in <span class="mention">#the_lounge</span></span>
+
+                </div>
+
+
+
+            </div>
+    </div>
+</div><div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/embed/avatars/0.png" alt="Avatar" />
+    </div>
+    <div class="chatlog__messages">
+    <span class="chatlog__author-name" title="Deleted User#0000" data-user-id="456226577798135808" style="color: ">Deleted User</span>
+
+
+        <span class="chatlog__timestamp">04-Jun-18 10:44 PM</span>
+
+            <div class="chatlog__message " data-message-id="453388737389264937" id="message-453388737389264937">
+                <div class="chatlog__content">
+                    <span class="markdown">The VoCo Verified Vendor cut of sales has been increased from 15% to 25%. The cut for Trial Vendors will remain 15%.</span>
+
+                </div>
+
+
+
+            </div>
+    </div>
+</div><div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/embed/avatars/0.png" alt="Avatar" />
+    </div>
+    <div class="chatlog__messages">
+    <span class="chatlog__author-name" title="Deleted User#0000" data-user-id="456226577798135808" style="color: ">Deleted User</span>
+
+
+        <span class="chatlog__timestamp">05-Jun-18 11:13 PM</span>
+
+            <div class="chatlog__message " data-message-id="453758396517187584" id="message-453758396517187584">
+                <div class="chatlog__content">
+                    <span class="markdown">Attention VoCo <span class="mention" style="color: #FF3D3D; background-color: rgba(255, 61, 61, 0.1); font-weight: 400;">@Management</span> members,
+
+Tomorrow I am going on a 5 day trip to a music festival, and I will most likely not be online Discord at all during this time.
+
+During this time, I ask that you all please keep things running smoothly, and try not to let the group get too inactive.
+
+To all staff with <span class="mention" style="color: #1F8B4C; background-color: rgba(31, 139, 76, 0.1); font-weight: 400;">@Creditor</span> perms: If anyone claims to have bought VoCoin while I am away, <strong>DM them</strong> and tell them to send you a <strong>screenshot</strong> of both the <strong>PayPal transaction details</strong> as well as the <strong>PayPal Email confirmation</strong> of their purchase. If these check out, &gt;credit them their VoCoin. Be sure to use the format I use when people purchase coin. Please do not publically talk about this temporary method of verifying VoCoin purchases, I don&#39;t want someone like Evan faking a PayPal purchase email.</span>
+
+                        <span class="chatlog__edited-timestamp" title="05-Jun-18 11:14 PM">(edited)</span>
+                </div>
+
+
+
+            </div>
+    </div>
+</div><div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/embed/avatars/0.png" alt="Avatar" />
+    </div>
+    <div class="chatlog__messages">
+    <span class="chatlog__author-name" title="Deleted User#0000" data-user-id="456226577798135808" style="color: ">Deleted User</span>
+
+
+        <span class="chatlog__timestamp">13-Jun-18 08:03 PM</span>
+
+            <div class="chatlog__message " data-message-id="456609655158997002" id="message-456609655158997002">
+                <div class="chatlog__content">
+                    <span class="markdown">Phase IV will start on Friday, June 15th.</span>
+
+                        <span class="chatlog__edited-timestamp" title="13-Jun-18 08:04 PM">(edited)</span>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="456609725329571851" id="message-456609725329571851">
+                <div class="chatlog__content">
+                    <span class="markdown">Prime Minister Elections will be on Tuesday, June 19th</span>
+
+                </div>
+
+
+
+            </div>
+    </div>
+</div><div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/embed/avatars/0.png" alt="Avatar" />
+    </div>
+    <div class="chatlog__messages">
+    <span class="chatlog__author-name" title="Deleted User#0000" data-user-id="456226577798135808" style="color: ">Deleted User</span>
+
+
+        <span class="chatlog__timestamp">14-Jun-18 01:51 AM</span>
+
+            <div class="chatlog__message " data-message-id="456697188798431263" id="message-456697188798431263">
+                <div class="chatlog__content">
+                    <span class="markdown">We will be having a Staff voice call before or around the start of Phase IV</span>
+
+                </div>
+
+
+
+            </div>
+    </div>
+</div><div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/embed/avatars/0.png" alt="Avatar" />
+    </div>
+    <div class="chatlog__messages">
+    <span class="chatlog__author-name" title="Deleted User#0000" data-user-id="456226577798135808" style="color: ">Deleted User</span>
+
+
+        <span class="chatlog__timestamp">15-Jun-18 07:47 AM</span>
+
+            <div class="chatlog__message " data-message-id="457149072751722516" id="message-457149072751722516">
+                <div class="chatlog__content">
+                    <span class="markdown">Staff with <span class="mention" style="color: #1F8B4C; background-color: rgba(31, 139, 76, 0.1); font-weight: 400;">@Creditor</span> perms please be aware of the 3-day 33% bonus applied to all jobs.</span>
+
+                </div>
+
+
+
+            </div>
+    </div>
+</div><div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/embed/avatars/0.png" alt="Avatar" />
+    </div>
+    <div class="chatlog__messages">
+    <span class="chatlog__author-name" title="Deleted User#0000" data-user-id="456226577798135808" style="color: ">Deleted User</span>
+
+
+        <span class="chatlog__timestamp">15-Jun-18 11:22 AM</span>
+
+            <div class="chatlog__message " data-message-id="457203318301917186" id="message-457203318301917186">
+                <div class="chatlog__content">
+                    <span class="markdown">Just round up to the nearest whole number</span>
+
+                </div>
+
+
+
+            </div>
+    </div>
+</div><div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/embed/avatars/0.png" alt="Avatar" />
+    </div>
+    <div class="chatlog__messages">
+    <span class="chatlog__author-name" title="Deleted User#0000" data-user-id="456226577798135808" style="color: ">Deleted User</span>
+
+
+        <span class="chatlog__timestamp">18-Jun-18 06:43 AM</span>
+
+            <div class="chatlog__message " data-message-id="458220178518441996" id="message-458220178518441996">
+                <div class="chatlog__content">
+                    <span class="markdown">AmericanOreo has been banned from this discord server.
+
+I made this decision due to Oreo intentionally causing issues and antagonizing members, while bringing nothing of substance to the group itself.
+
+Oreo has been inactive/gone from VoCo for several months before his recent re-appearance, and in that time, we have grown to completely new heights regarding activity, server presence, and membership levels. So in truth, nothing is really changing, this isn&#39;t any sort of setback, we are simply enforcing our Anti-Toxicity policy.
+
+Oreo and I have both agreed that VoCo is divisive to our friendship, and for it to continue it&#39;s best that he is not a part of it.</span>
+
+                        <span class="chatlog__edited-timestamp" title="18-Jun-18 06:49 AM">(edited)</span>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="458220296735031297" id="message-458220296735031297">
+                <div class="chatlog__content">
+                    <span class="markdown">It&#39;s really not a big deal, so please do not perpetuate conversation about this with members, let&#39;s simply move on.</span>
+
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="458221117119660034" id="message-458221117119660034">
+                <div class="chatlog__content">
+                    <span class="markdown">I will make a public announcement about this at some point in the next few days/weeks.</span>
+
+                </div>
+
+
+
+            </div>
+    </div>
+</div><div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/embed/avatars/0.png" alt="Avatar" />
+    </div>
+    <div class="chatlog__messages">
+    <span class="chatlog__author-name" title="Deleted User#0000" data-user-id="456226577798135808" style="color: ">Deleted User</span>
+
+
+        <span class="chatlog__timestamp">18-Jun-18 08:32 PM</span>
+
+            <div class="chatlog__message " data-message-id="458428836993040395" id="message-458428836993040395">
+                <div class="chatlog__content">
+                    <span class="markdown">Looking to re-open the Spawn Squad™, we will need a staff member to take the project lead.</span>
+
+                </div>
+
+
+
+            </div>
+    </div>
+</div><div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/embed/avatars/0.png" alt="Avatar" />
+    </div>
+    <div class="chatlog__messages">
+    <span class="chatlog__author-name" title="Deleted User#0000" data-user-id="456226577798135808" style="color: ">Deleted User</span>
+
+
+        <span class="chatlog__timestamp">20-Jun-18 01:55 AM</span>
+
+            <div class="chatlog__message " data-message-id="458872564329086976" id="message-458872564329086976">
+                <div class="chatlog__content">
+                    <span class="markdown">Please note that we do not give Guest to just anyone, as Guest accounts can use VoCoin™ services.</span>
+
+                </div>
+
+
+
+            </div>
+    </div>
+</div><div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/embed/avatars/0.png" alt="Avatar" />
+    </div>
+    <div class="chatlog__messages">
+    <span class="chatlog__author-name" title="Deleted User#0000" data-user-id="456226577798135808" style="color: ">Deleted User</span>
+
+
+        <span class="chatlog__timestamp">21-Jun-18 02:31 PM</span>
+
+            <div class="chatlog__message " data-message-id="459425019576188948" id="message-459425019576188948">
+                <div class="chatlog__content">
+                    <span class="markdown"><span class="mention" style="color: #11BE7B; background-color: rgba(17, 190, 123, 0.1); font-weight: 400;">@Recruiter</span> Team: The +addReferral command has been changed to be made less confusing, from now on, this is the format:
+
+<span class="pre pre--inline">+addReferral &lt;newPlayer&gt; &lt;oldPlayer&gt;</span></span>
+
+                </div>
+
+
+
+                <div class="chatlog__reactions">
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="🇴" title="🇴" src="https://twemoji.maxcdn.com/2/72x72/1f1f4.png" />
+                            <span class="chatlog__reaction-count">4</span>
+                        </div>
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="🇰" title="🇰" src="https://twemoji.maxcdn.com/2/72x72/1f1f0.png" />
+                            <span class="chatlog__reaction-count">4</span>
+                        </div>
+                </div>
+            </div>
+    </div>
+</div><div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/embed/avatars/0.png" alt="Avatar" />
+    </div>
+    <div class="chatlog__messages">
+    <span class="chatlog__author-name" title="Deleted User#0000" data-user-id="456226577798135808" style="color: ">Deleted User</span>
+
+
+        <span class="chatlog__timestamp">23-Jun-18 08:27 AM</span>
+
+            <div class="chatlog__message " data-message-id="460058434113634344" id="message-460058434113634344">
+                <div class="chatlog__content">
+                    <span class="markdown">Sometime after Cass&#39;s event tomorrow, I am going to announce Phase IV&#39;s constantiam division</span>
+
+                </div>
+
+
+
+            </div>
+    </div>
+</div><div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/embed/avatars/0.png" alt="Avatar" />
+    </div>
+    <div class="chatlog__messages">
+    <span class="chatlog__author-name" title="Deleted User#0000" data-user-id="456226577798135808" style="color: ">Deleted User</span>
+
+
+        <span class="chatlog__timestamp">01-Jul-18 01:56 AM</span>
+
+            <div class="chatlog__message " data-message-id="462859121897504799" id="message-462859121897504799">
+                <div class="chatlog__content">
+                    <span class="markdown">remember everyone <a href="https://i.imgur.com/tWSlY5D.jpg">https://i.imgur.com/tWSlY5D.jpg</a></span>
+
+                </div>
+
+
+            <div class="chatlog__embed">
+                <div class="chatlog__embed-color-pill chatlog__embed-color-pill--default"></div>
+                <div class="chatlog__embed-content-container">
+                    <div class="chatlog__embed-content">
+                        <div class="chatlog__embed-text">
+
+
+
+                        </div>
+
+                        <div class="chatlog__embed-thumbnail-container">
+                            <a class="chatlog__embed-thumbnail-link" href="https://i.imgur.com/tWSlY5D.jpg">
+                                <img class="chatlog__embed-thumbnail" src="https://i.imgur.com/tWSlY5D.jpg" alt="Thumbnail" />
+                            </a>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+
+                <div class="chatlog__reactions">
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="cyan3" title="cyan3" src="https://cdn.discordapp.com/emojis/367140044085133314.png" />
+                            <span class="chatlog__reaction-count">1</span>
+                        </div>
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="✅" title="✅" src="https://twemoji.maxcdn.com/2/72x72/2705.png" />
+                            <span class="chatlog__reaction-count">3</span>
+                        </div>
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="fud" title="fud" src="https://cdn.discordapp.com/emojis/444244790075326479.png" />
+                            <span class="chatlog__reaction-count">4</span>
+                        </div>
+                </div>
+            </div>
+    </div>
+</div><div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/embed/avatars/0.png" alt="Avatar" />
+    </div>
+    <div class="chatlog__messages">
+    <span class="chatlog__author-name" title="Deleted User#0000" data-user-id="456226577798135808" style="color: ">Deleted User</span>
+
+
+        <span class="chatlog__timestamp">04-Jul-18 10:52 PM</span>
+
+            <div class="chatlog__message " data-message-id="464262189167935492" id="message-464262189167935492">
+                <div class="chatlog__content">
+                    <span class="markdown"><span class="mention" style="color: #1F8B4C; background-color: rgba(31, 139, 76, 0.1); font-weight: 400;">@Creditor</span> from now on, when members redeem farms, bases, or anything that requires coords or confirmation to be sent via DM, please submit a +ticket in <span class="mention">#the_lounge</span> with the coords and perhaps the link they submitted to redeem it</span>
+
+                        <span class="chatlog__edited-timestamp" title="05-Jul-18 03:20 PM">(edited)</span>
+                </div>
+
+
+
+            </div>
+    </div>
+</div><div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/embed/avatars/0.png" alt="Avatar" />
+    </div>
+    <div class="chatlog__messages">
+    <span class="chatlog__author-name" title="Deleted User#0000" data-user-id="456226577798135808" style="color: ">Deleted User</span>
+
+
+        <span class="chatlog__timestamp">05-Jul-18 12:27 PM</span>
+
+            <div class="chatlog__message " data-message-id="464467296430194688" id="message-464467296430194688">
+                <div class="chatlog__content">
+                    <span class="markdown">These are the applicants for new Staff members, please voice any opinions in <span class="mention">#the_lounge</span>.
+<a href="https://docs.google.com/spreadsheets/d/1S_o_R7UKewIVMzXx6ykgcKln54Kl106vbzFEG-i5Ui8/edit?usp=sharing">https://docs.google.com/spreadsheets/d/1S_o_R7UKewIVMzXx6ykgcKln54Kl106vbzFEG-i5Ui8/edit?usp=sharing</a></span>
+
+                </div>
+
+
+            <div class="chatlog__embed">
+                <div class="chatlog__embed-color-pill chatlog__embed-color-pill--default"></div>
+                <div class="chatlog__embed-content-container">
+                    <div class="chatlog__embed-content">
+                        <div class="chatlog__embed-text">
+
+                            <div class="chatlog__embed-title">
+                                <a class="chatlog__embed-title-link" href="https://docs.google.com/spreadsheets/d/1S_o_R7UKewIVMzXx6ykgcKln54Kl106vbzFEG-i5Ui8/edit?usp=sharing"><span class="markdown">VoCo Staff Application (Responses)</span></a>
+                            </div>
+
+                            <div class="chatlog__embed-description"><span class="markdown">Form Responses 1
+
+ Timestamp, What is your Discord name and Tag?, What is your rank&amp; how long have you been in VoCo?, What position are you applying for?, Why should we consider you for this position? Please provide qualifications., Do you have any examples of your work?( Dev...</span></div>
+
+                        </div>
+
+                        <div class="chatlog__embed-thumbnail-container">
+                            <a class="chatlog__embed-thumbnail-link" href="https://lh4.googleusercontent.com/W5mojSKkPMCys8mIAnjF9RFeg7LLsVTKoEhqURmzzi99KLdlbh3Ily0aOyjuNbfTR9W0Eg=w1200-h630-p">
+                                <img class="chatlog__embed-thumbnail" src="https://lh4.googleusercontent.com/W5mojSKkPMCys8mIAnjF9RFeg7LLsVTKoEhqURmzzi99KLdlbh3Ily0aOyjuNbfTR9W0Eg=w1200-h630-p" alt="Thumbnail" />
+                            </a>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+
+            </div>
+    </div>
+</div><div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/embed/avatars/0.png" alt="Avatar" />
+    </div>
+    <div class="chatlog__messages">
+    <span class="chatlog__author-name" title="Deleted User#0000" data-user-id="456226577798135808" style="color: ">Deleted User</span>
+
+
+        <span class="chatlog__timestamp">06-Jul-18 04:16 PM</span>
+
+            <div class="chatlog__message " data-message-id="464887301143658506" id="message-464887301143658506">
+                <div class="chatlog__content">
+                    <span class="markdown"><span class="mention" style="color: #1F8B4C; background-color: rgba(31, 139, 76, 0.1); font-weight: 400;">@Creditor</span> Remember how I asked you to start submitting +tickets of work members redeemed privately? I haven&#39;t seen any of you doing that yet.</span>
+
+                </div>
+
+
+
+            </div>
+    </div>
+</div><div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/embed/avatars/0.png" alt="Avatar" />
+    </div>
+    <div class="chatlog__messages">
+    <span class="chatlog__author-name" title="Deleted User#0000" data-user-id="456226577798135808" style="color: ">Deleted User</span>
+
+
+        <span class="chatlog__timestamp">07-Jul-18 06:55 AM</span>
+
+            <div class="chatlog__message " data-message-id="465108660499251221" id="message-465108660499251221">
+                <div class="chatlog__content">
+                    <span class="markdown">I think the official VoCo Meetup time going forward should be 4pm  CST, this is 2pm PST, 5pm EST, &amp; 10pm GMT.
+Thoughts? <span class="mention">#the_lounge</span> (tag me if it&#39;s been more than a day)</span>
+
+                </div>
+
+
+
+            </div>
+    </div>
+</div><div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/embed/avatars/0.png" alt="Avatar" />
+    </div>
+    <div class="chatlog__messages">
+    <span class="chatlog__author-name" title="Deleted User#0000" data-user-id="456226577798135808" style="color: ">Deleted User</span>
+
+
+        <span class="chatlog__timestamp">11-Jul-18 01:46 AM</span>
+
+            <div class="chatlog__message " data-message-id="466480319927681025" id="message-466480319927681025">
+                <div class="chatlog__content">
+                    <span class="markdown"><span class="mention" style="color: #1F8B4C; background-color: rgba(31, 139, 76, 0.1); font-weight: 400;">@Creditor</span> Please be aware, payment for advertising VoCo in chat has been adjusted back to 3 VCN per message.</span>
+
+                </div>
+
+
+
+            </div>
+    </div>
+</div><div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/embed/avatars/0.png" alt="Avatar" />
+    </div>
+    <div class="chatlog__messages">
+    <span class="chatlog__author-name" title="Deleted User#0000" data-user-id="456226577798135808" style="color: ">Deleted User</span>
+
+
+        <span class="chatlog__timestamp">11-Jul-18 03:36 PM</span>
+
+            <div class="chatlog__message " data-message-id="466689356544081920" id="message-466689356544081920">
+                <div class="chatlog__content">
+                    <span class="markdown"><span class="mention" style="color: #1F8B4C; background-color: rgba(31, 139, 76, 0.1); font-weight: 400;">@Creditor</span> - Two things:
+
+1. When someone redeems work where proof isn&#39;t posted publicly in <span class="mention">#redeem</span>, such as Chat Logs, and Coords to Farms or Bases, you need to post the proof they sent you as a Ticket so that there is a record of work done, not just scattered throughout the DMs of Creditors.
+
+2. You can now post directly to the <span class="mention">#bot_logs</span> chat, instead of doing +ticket in staff_chat. No need to do the actual +ticket command anymore. Just post in <span class="mention">#bot_logs</span>.</span>
+
+                </div>
+
+
+
+            </div>
+    </div>
+</div><div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/embed/avatars/0.png" alt="Avatar" />
+    </div>
+    <div class="chatlog__messages">
+    <span class="chatlog__author-name" title="Deleted User#0000" data-user-id="456226577798135808" style="color: ">Deleted User</span>
+
+
+        <span class="chatlog__timestamp">12-Jul-18 11:15 PM</span>
+
+            <div class="chatlog__message " data-message-id="467167067519451146" id="message-467167067519451146">
+                <div class="chatlog__content">
+                    <span class="markdown">Recruiters - So you&#39;re aware, there is a Google Sheets app so that you can recruit on the go.</span>
+
+                </div>
+
+
+
+            </div>
+    </div>
+</div><div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/embed/avatars/0.png" alt="Avatar" />
+    </div>
+    <div class="chatlog__messages">
+    <span class="chatlog__author-name" title="Deleted User#0000" data-user-id="456226577798135808" style="color: ">Deleted User</span>
+
+
+        <span class="chatlog__timestamp">13-Jul-18 02:30 AM</span>
+
+            <div class="chatlog__message " data-message-id="467216216138842134" id="message-467216216138842134">
+                <div class="chatlog__content">
+                    <span class="markdown">I have started a VoCo Trello staff board to help us with managing tasks and productivity.
+
+I would like all staff to setup an account and join: <a href="https://trello.com/">https://trello.com/</a>
+
+Once you sign up, post your username or email in <span class="mention">#the_lounge</span> (and tag me) so I can add you. Then you can view the VoCo Staff Board at <a href="https://trello.com/b/a6Jfv0oZ">https://trello.com/b/a6Jfv0oZ</a></span>
+
+                        <span class="chatlog__edited-timestamp" title="13-Jul-18 02:37 AM">(edited)</span>
+                </div>
+
+
+            <div class="chatlog__embed">
+                <div class="chatlog__embed-color-pill chatlog__embed-color-pill--default"></div>
+                <div class="chatlog__embed-content-container">
+                    <div class="chatlog__embed-content">
+                        <div class="chatlog__embed-text">
+
+                            <div class="chatlog__embed-title">
+                                <a class="chatlog__embed-title-link" href="https://trello.com/"><span class="markdown">Trello</span></a>
+                            </div>
+
+                            <div class="chatlog__embed-description"><span class="markdown">Infinitely flexible.  Incredibly easy to use.  Great mobile apps.  It&#39;s free.  Trello keeps track of everything, from the big picture to the minute details.</span></div>
+
+                        </div>
+
+                        <div class="chatlog__embed-thumbnail-container">
+                            <a class="chatlog__embed-thumbnail-link" href="https://d2k1ftgv7pobq7.cloudfront.net/meta/p/res/images/fb4de993e22034b76539da073ea8d35c/home-hero.png">
+                                <img class="chatlog__embed-thumbnail" src="https://d2k1ftgv7pobq7.cloudfront.net/meta/p/res/images/fb4de993e22034b76539da073ea8d35c/home-hero.png" alt="Thumbnail" />
+                            </a>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="chatlog__embed">
+                <div class="chatlog__embed-color-pill chatlog__embed-color-pill--default"></div>
+                <div class="chatlog__embed-content-container">
+                    <div class="chatlog__embed-content">
+                        <div class="chatlog__embed-text">
+
+                            <div class="chatlog__embed-title">
+                                <a class="chatlog__embed-title-link" href="https://trello.com/b/a6Jfv0oZ"><span class="markdown">Trello</span></a>
+                            </div>
+
+                            <div class="chatlog__embed-description"><span class="markdown">Organize anything, together. Trello is a collaboration tool that organizes your projects into boards. In one glance, know what&#39;s being worked on, who&#39;s working on what, and where something is in a process.</span></div>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+            </div>
+
+            </div>
+    </div>
+</div><div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/embed/avatars/0.png" alt="Avatar" />
+    </div>
+    <div class="chatlog__messages">
+    <span class="chatlog__author-name" title="Deleted User#0000" data-user-id="456226577798135808" style="color: ">Deleted User</span>
+
+
+        <span class="chatlog__timestamp">13-Jul-18 03:05 AM</span>
+
+            <div class="chatlog__message " data-message-id="467225054988730371" id="message-467225054988730371">
+                <div class="chatlog__content">
+                    <span class="markdown">Feel free to add anything to the &quot;Ideas&quot; list. You can also comment on other&#39;s ideas</span>
+
+                </div>
+
+
+
+            </div>
+    </div>
+</div><div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/embed/avatars/0.png" alt="Avatar" />
+    </div>
+    <div class="chatlog__messages">
+    <span class="chatlog__author-name" title="Deleted User#0000" data-user-id="456226577798135808" style="color: ">Deleted User</span>
+
+
+        <span class="chatlog__timestamp">13-Jul-18 05:06 AM</span>
+
+            <div class="chatlog__message " data-message-id="467255467031134211" id="message-467255467031134211">
+                <div class="chatlog__content">
+                    <span class="markdown">Also, Trello has a mobile app that&#39;s pretty nice.</span>
+
+                </div>
+
+
+
+            </div>
+    </div>
+</div><div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/embed/avatars/0.png" alt="Avatar" />
+    </div>
+    <div class="chatlog__messages">
+    <span class="chatlog__author-name" title="Deleted User#0000" data-user-id="456226577798135808" style="color: ">Deleted User</span>
+
+
+        <span class="chatlog__timestamp">13-Jul-18 05:21 AM</span>
+
+            <div class="chatlog__message " data-message-id="467259253774876673" id="message-467259253774876673">
+                <div class="chatlog__content">
+                    <span class="markdown">Please set your Trello profile picture to the same image as your discord profile picture.</span>
+
+                </div>
+
+
+
+            </div>
+    </div>
+</div><div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/embed/avatars/0.png" alt="Avatar" />
+    </div>
+    <div class="chatlog__messages">
+    <span class="chatlog__author-name" title="Deleted User#0000" data-user-id="456226577798135808" style="color: ">Deleted User</span>
+
+
+        <span class="chatlog__timestamp">17-Jul-18 11:49 PM</span>
+
+            <div class="chatlog__message " data-message-id="468987579040006175" id="message-468987579040006175">
+                <div class="chatlog__content">
+                    <span class="markdown">Discontinue Prime Minister elections due to brewing constant negativity and disdain between VoCo members? (Y/N)</span>
+
+                </div>
+
+
+
+                <div class="chatlog__reactions">
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="🇾" title="🇾" src="https://twemoji.maxcdn.com/2/72x72/1f1fe.png" />
+                            <span class="chatlog__reaction-count">5</span>
+                        </div>
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="🇳" title="🇳" src="https://twemoji.maxcdn.com/2/72x72/1f1f3.png" />
+                            <span class="chatlog__reaction-count">5</span>
+                        </div>
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="🇲" title="🇲" src="https://twemoji.maxcdn.com/2/72x72/1f1f2.png" />
+                            <span class="chatlog__reaction-count">1</span>
+                        </div>
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="🇦" title="🇦" src="https://twemoji.maxcdn.com/2/72x72/1f1e6.png" />
+                            <span class="chatlog__reaction-count">1</span>
+                        </div>
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="🅱" title="🅱" src="https://twemoji.maxcdn.com/2/72x72/1f171.png" />
+                            <span class="chatlog__reaction-count">1</span>
+                        </div>
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="🇪" title="🇪" src="https://twemoji.maxcdn.com/2/72x72/1f1ea.png" />
+                            <span class="chatlog__reaction-count">1</span>
+                        </div>
+                </div>
+            </div>
+    </div>
+</div><div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/embed/avatars/0.png" alt="Avatar" />
+    </div>
+    <div class="chatlog__messages">
+    <span class="chatlog__author-name" title="Deleted User#0000" data-user-id="456226577798135808" style="color: ">Deleted User</span>
+
+
+        <span class="chatlog__timestamp">21-Jul-18 05:26 AM</span>
+
+            <div class="chatlog__message " data-message-id="470159708616130560" id="message-470159708616130560">
+                <div class="chatlog__content">
+                    <span class="markdown">Should we:
+
+<img class="emoji " alt="🇦" title="🇦" src="https://twemoji.maxcdn.com/2/72x72/1f1e6.png" /> Move away from the &quot;Did you know?&quot; ad-bot format
+<img class="emoji " alt="🇧" title="🇧" src="https://twemoji.maxcdn.com/2/72x72/1f1e7.png" /> Incorporate DYK messages along with non-DYK messages.
+<img class="emoji " alt="🇨" title="🇨" src="https://twemoji.maxcdn.com/2/72x72/1f1e8.png" /> Keep the current ad-bot file.</span>
+
+                        <span class="chatlog__edited-timestamp" title="21-Jul-18 05:34 AM">(edited)</span>
+                </div>
+
+
+
+                <div class="chatlog__reactions">
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="🇦" title="🇦" src="https://twemoji.maxcdn.com/2/72x72/1f1e6.png" />
+                            <span class="chatlog__reaction-count">2</span>
+                        </div>
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="🇧" title="🇧" src="https://twemoji.maxcdn.com/2/72x72/1f1e7.png" />
+                            <span class="chatlog__reaction-count">7</span>
+                        </div>
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="🇨" title="🇨" src="https://twemoji.maxcdn.com/2/72x72/1f1e8.png" />
+                            <span class="chatlog__reaction-count">2</span>
+                        </div>
+                </div>
+            </div>
+    </div>
+</div><div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/embed/avatars/0.png" alt="Avatar" />
+    </div>
+    <div class="chatlog__messages">
+    <span class="chatlog__author-name" title="Deleted User#0000" data-user-id="456226577798135808" style="color: ">Deleted User</span>
+
+
+        <span class="chatlog__timestamp">22-Jul-18 05:41 AM</span>
+
+            <div class="chatlog__message " data-message-id="470525871371976715" id="message-470525871371976715">
+                <div class="chatlog__content">
+                    <span class="markdown">The Vortex Coalition now has a Slack channel, to be used in the event of Discord outages or other Sengorn Level Event scenarios.
+For the moment, this will be staff only.
+<a href="https://joinvo.co/slack">https://joinvo.co/slack</a></span>
+
+                        <span class="chatlog__edited-timestamp" title="22-Jul-18 05:42 AM">(edited)</span>
+                </div>
+
+
+
+            </div>
+    </div>
+</div><div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/embed/avatars/0.png" alt="Avatar" />
+    </div>
+    <div class="chatlog__messages">
+    <span class="chatlog__author-name" title="Deleted User#0000" data-user-id="456226577798135808" style="color: ">Deleted User</span>
+
+
+        <span class="chatlog__timestamp">25-Jul-18 02:06 PM</span>
+
+            <div class="chatlog__message " data-message-id="471740065337311233" id="message-471740065337311233">
+                <div class="chatlog__content">
+                    <span class="markdown"><span class="mention" style="color: #1F8B4C; background-color: rgba(31, 139, 76, 0.1); font-weight: 400;">@Creditor</span> please note that VoCoin™ Payouts for repairing 420/911 have been <strong>doubled</strong> to <img class="emoji " alt="vcn" title="vcn" src="https://cdn.discordapp.com/emojis/393366662042091520.png" />20-100 VCN.</span>
+
+                </div>
+
+
+
+            </div>
+    </div>
+</div><div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/embed/avatars/0.png" alt="Avatar" />
+    </div>
+    <div class="chatlog__messages">
+    <span class="chatlog__author-name" title="Deleted User#0000" data-user-id="456226577798135808" style="color: ">Deleted User</span>
+
+
+        <span class="chatlog__timestamp">28-Jul-18 07:45 PM</span>
+
+            <div class="chatlog__message " data-message-id="472912417894957108" id="message-472912417894957108">
+                <div class="chatlog__content">
+                    <span class="markdown">We now have <span class="mention">#staff-wages</span>, where VoCo Staff can &quot;redeem&quot; how active they&#39;ve been over the past week, and any progress they&#39;ve made on their respective projects for VoCoin™
+
+This will serve as a Staff payment system until VoCoin™ wages are implemented (if ever).</span>
+
+                </div>
+
+
+
+            </div>
+    </div>
+</div><div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/embed/avatars/0.png" alt="Avatar" />
+    </div>
+    <div class="chatlog__messages">
+    <span class="chatlog__author-name" title="Deleted User#0000" data-user-id="456226577798135808" style="color: ">Deleted User</span>
+
+
+        <span class="chatlog__timestamp">30-Jul-18 09:48 AM</span>
+
+            <div class="chatlog__message " data-message-id="473486991925837824" id="message-473486991925837824">
+                <div class="chatlog__content">
+                    <span class="markdown">VoQueue is the next step in VoCo evolution. This technology will allow our group to more easily take on group projects, and keep tabs on bases. I&#39;m very excited to start working with this new feature.</span>
+
+                </div>
+
+
+
+                <div class="chatlog__reactions">
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="😀" title="😀" src="https://twemoji.maxcdn.com/2/72x72/1f600.png" />
+                            <span class="chatlog__reaction-count">2</span>
+                        </div>
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="👍" title="👍" src="https://twemoji.maxcdn.com/2/72x72/1f44d.png" />
+                            <span class="chatlog__reaction-count">2</span>
+                        </div>
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="redfist" title="redfist" src="https://cdn.discordapp.com/emojis/335329228625149952.png" />
+                            <span class="chatlog__reaction-count">2</span>
+                        </div>
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="voco" title="voco" src="https://cdn.discordapp.com/emojis/270134098347950080.png" />
+                            <span class="chatlog__reaction-count">2</span>
+                        </div>
+                </div>
+            </div>
+    </div>
+</div><div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/embed/avatars/0.png" alt="Avatar" />
+    </div>
+    <div class="chatlog__messages">
+    <span class="chatlog__author-name" title="Deleted User#0000" data-user-id="456226577798135808" style="color: ">Deleted User</span>
+
+
+        <span class="chatlog__timestamp">30-Jul-18 02:35 PM</span>
+
+            <div class="chatlog__message " data-message-id="473559345481646080" id="message-473559345481646080">
+                <div class="chatlog__content">
+                    <span class="markdown">We are currently working to exterminate this small group that spammed our discord several days ago. Here is their discord. Do not spread it around, we are trying to kill out their community: <a href="https://discord.gg/rCJpcCc">https://discord.gg/rCJpcCc</a></span>
+
+                </div>
+
+
+
+            </div>
+    </div>
+</div><div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/embed/avatars/0.png" alt="Avatar" />
+    </div>
+    <div class="chatlog__messages">
+    <span class="chatlog__author-name" title="Deleted User#0000" data-user-id="456226577798135808" style="color: ">Deleted User</span>
+
+
+        <span class="chatlog__timestamp">31-Jul-18 06:12 AM</span>
+
+            <div class="chatlog__message " data-message-id="473795190885187585" id="message-473795190885187585">
+                <div class="chatlog__content">
+                    <span class="markdown">Hey Staff, <span class="mention" title="justskill1#9599">@justskill1</span> is asking me if there&#39;s anything we need for voco operations/building, because he is buying a huge dupe stash soon
+let me know if you have dupe recommendations
+
+Currently on the list:
+-wither kits
+-concrete
+-iron blocks
+-pvp gear</span>
+
+                </div>
+
+
+
+            </div>
+    </div>
+</div><div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/embed/avatars/0.png" alt="Avatar" />
+    </div>
+    <div class="chatlog__messages">
+    <span class="chatlog__author-name" title="Deleted User#0000" data-user-id="456226577798135808" style="color: ">Deleted User</span>
+
+
+        <span class="chatlog__timestamp">31-Jul-18 07:13 AM</span>
+
+            <div class="chatlog__message " data-message-id="473810455526375425" id="message-473810455526375425">
+                <div class="chatlog__content">
+                    <span class="markdown">There is a full list of items we can choose from in <span class="mention">#builder_chat</span></span>
+
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="473810499897786389" id="message-473810499897786389">
+                <div class="chatlog__content">
+                    <span class="markdown">and you can talk to justskill1 there</span>
+
+                </div>
+
+
+
+            </div>
+    </div>
+</div><div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/embed/avatars/0.png" alt="Avatar" />
+    </div>
+    <div class="chatlog__messages">
+    <span class="chatlog__author-name" title="Deleted User#0000" data-user-id="456226577798135808" style="color: ">Deleted User</span>
+
+
+        <span class="chatlog__timestamp">01-Aug-18 01:13 AM</span>
+
+            <div class="chatlog__message chatlog__message--pinned" data-message-id="474082105782042647" id="message-474082105782042647">
+                <div class="chatlog__content">
+                    <span class="markdown"><a href="https://docs.google.com/spreadsheets/d/1S_o_R7UKewIVMzXx6ykgcKln54Kl106vbzFEG-i5Ui8/edit?usp=sharing">https://docs.google.com/spreadsheets/d/1S_o_R7UKewIVMzXx6ykgcKln54Kl106vbzFEG-i5Ui8/edit?usp=sharing</a></span>
+
+                </div>
+
+
+            <div class="chatlog__embed">
+                <div class="chatlog__embed-color-pill chatlog__embed-color-pill--default"></div>
+                <div class="chatlog__embed-content-container">
+                    <div class="chatlog__embed-content">
+                        <div class="chatlog__embed-text">
+
+                            <div class="chatlog__embed-title">
+                                <a class="chatlog__embed-title-link" href="https://docs.google.com/spreadsheets/d/1S_o_R7UKewIVMzXx6ykgcKln54Kl106vbzFEG-i5Ui8/edit?usp=sharing"><span class="markdown">VoCo Staff Application (Responses)</span></a>
+                            </div>
+
+                            <div class="chatlog__embed-description"><span class="markdown">Form Responses 1
+
+ Timestamp, What is your Discord name and Tag?, What is your rank&amp; how long have you been in VoCo?, What position are you applying for?, Why should we consider you for this position? Please provide qualifications., Do you have any examples of your work?( Dev...</span></div>
+
+                        </div>
+
+                        <div class="chatlog__embed-thumbnail-container">
+                            <a class="chatlog__embed-thumbnail-link" href="https://lh4.googleusercontent.com/W5mojSKkPMCys8mIAnjF9RFeg7LLsVTKoEhqURmzzi99KLdlbh3Ily0aOyjuNbfTR9W0Eg=w1200-h630-p">
+                                <img class="chatlog__embed-thumbnail" src="https://lh4.googleusercontent.com/W5mojSKkPMCys8mIAnjF9RFeg7LLsVTKoEhqURmzzi99KLdlbh3Ily0aOyjuNbfTR9W0Eg=w1200-h630-p" alt="Thumbnail" />
+                            </a>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+
+            </div>
+    </div>
+</div><div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/embed/avatars/0.png" alt="Avatar" />
+    </div>
+    <div class="chatlog__messages">
+    <span class="chatlog__author-name" title="Deleted User#0000" data-user-id="456226577798135808" style="color: ">Deleted User</span>
+
+
+        <span class="chatlog__timestamp">09-Aug-18 01:44 AM</span>
+
+            <div class="chatlog__message " data-message-id="476989170313723905" id="message-476989170313723905">
+                <div class="chatlog__content">
+                    <span class="markdown">Hey guys, sorry I&#39;ve been so inactive lately. I&#39;m about to move to a new place and start my next semester of college so these periods of inactivity will likely continue.
+
+I will try to be on every once in a while to answer questions and deal with important matters, but if you guys can, <strong>keep things running smoothly for me.</strong>
+
+You can all take initiative as VoCo staff to take action in order to keep the group running, not everything needs to be run by me. As long as you&#39;re posting about it in Staff chat and getting feedback from other Staff before you do it.
+
+Once the school year gets on track and everyone is on a solid schedule, activity should really ramp up here in about a month or two. That&#39;s when Phase IV will really kick into high gear, I guarantee it.
+
+Until then, everyone on the Staff team needs to contribute to ensure things are functioning normally.</span>
+
+                </div>
+
+
+
+                <div class="chatlog__reactions">
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="👍" title="👍" src="https://twemoji.maxcdn.com/2/72x72/1f44d.png" />
+                            <span class="chatlog__reaction-count">1</span>
+                        </div>
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="voco" title="voco" src="https://cdn.discordapp.com/emojis/270134098347950080.png" />
+                            <span class="chatlog__reaction-count">1</span>
+                        </div>
+                </div>
+            </div>
+    </div>
+</div><div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/embed/avatars/0.png" alt="Avatar" />
+    </div>
+    <div class="chatlog__messages">
+    <span class="chatlog__author-name" title="Deleted User#0000" data-user-id="456226577798135808" style="color: ">Deleted User</span>
+
+
+        <span class="chatlog__timestamp">10-Aug-18 11:42 PM</span>
+
+            <div class="chatlog__message chatlog__message--pinned" data-message-id="477683225632702514" id="message-477683225632702514">
+                <div class="chatlog__content">
+                    <span class="markdown"><span class="mention">#staff_announcements</span> is now visible to all VoCo Management roles.</span>
+
+                </div>
+
+
+
+                <div class="chatlog__reactions">
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="masicore" title="masicore" src="https://cdn.discordapp.com/emojis/270131969625554944.png" />
+                            <span class="chatlog__reaction-count">3</span>
+                        </div>
+                </div>
+            </div>
+            <div class="chatlog__message " data-message-id="477683262899093520" id="message-477683262899093520">
+                <div class="chatlog__content">
+                    <span class="markdown">Pinned a message.</span>
+
+                </div>
+
+
+
+            </div>
+    </div>
+</div><div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/embed/avatars/0.png" alt="Avatar" />
+    </div>
+    <div class="chatlog__messages">
+    <span class="chatlog__author-name" title="Deleted User#0000" data-user-id="456226577798135808" style="color: ">Deleted User</span>
+
+
+        <span class="chatlog__timestamp">19-Aug-18 05:07 AM</span>
+
+            <div class="chatlog__message " data-message-id="480664098691088405" id="message-480664098691088405">
+                <div class="chatlog__content">
+                    <span class="markdown">Hey guys, sorry for the inactivity. I&#39;m super busy at the moment because i just moved and start college tuesday.
+i&#39;m trying to check in every once in a while. but I need everyone here to help keep the group active and running while I&#39;m busy irl.
+
+I would like you all to do your respective jobs and communicate with each other in <span class="mention">#staff_chat</span> chat to ensure VoCo is running effectively.
+
+You do not need permission from me to do your jobs. I don&#39;t need to approve everything you guys do. Just run it by other staff members in <span class="mention">#staff_chat</span> and see what they think beforehand for things you are unsure about.
+I should only need to be involved in the decision making process for things that would effect the entire group.</span>
+
+                </div>
+
+
+
+            </div>
+    </div>
+</div><div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/embed/avatars/0.png" alt="Avatar" />
+    </div>
+    <div class="chatlog__messages">
+    <span class="chatlog__author-name" title="Deleted User#0000" data-user-id="456226577798135808" style="color: ">Deleted User</span>
+
+
+        <span class="chatlog__timestamp">26-Aug-18 07:55 PM</span>
+
+            <div class="chatlog__message " data-message-id="483424192814120980" id="message-483424192814120980">
+                <div class="chatlog__content">
+                    <span class="markdown"><span class="mention" style="color: #1F8B4C; background-color: rgba(31, 139, 76, 0.1); font-weight: 400;">@Creditor</span> A lot of people have been doing work at the Event today. <span class="mention">#redeem</span> should be closely watched!</span>
+
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="483424785523539988" id="message-483424785523539988">
+                <div class="chatlog__content">
+                    <span class="markdown">When you Credit work, please mark it with ✅</span>
+
+                </div>
+
+
+
+            </div>
+    </div>
+</div><div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/embed/avatars/0.png" alt="Avatar" />
+    </div>
+    <div class="chatlog__messages">
+    <span class="chatlog__author-name" title="Deleted User#0000" data-user-id="456226577798135808" style="color: ">Deleted User</span>
+
+
+        <span class="chatlog__timestamp">01-Sep-18 01:29 PM</span>
+
+            <div class="chatlog__message " data-message-id="485501519374975007" id="message-485501519374975007">
+                <div class="chatlog__content">
+                    <span class="markdown">When banning people, please automatically remove all of their messages (the default setting) unless <em>absolutely necessary</em>.</span>
+
+                </div>
+
+
+
+            </div>
+    </div>
+</div><div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/embed/avatars/0.png" alt="Avatar" />
+    </div>
+    <div class="chatlog__messages">
+    <span class="chatlog__author-name" title="Deleted User#0000" data-user-id="456226577798135808" style="color: ">Deleted User</span>
+
+
+        <span class="chatlog__timestamp">03-Sep-18 07:26 PM</span>
+
+            <div class="chatlog__message " data-message-id="486316172023693322" id="message-486316172023693322">
+                <div class="chatlog__content">
+                    <span class="markdown"><span class="mention" style="color: #1F8B4C; background-color: rgba(31, 139, 76, 0.1); font-weight: 400;">@Creditor</span> 
+The advertisement bonus on Constantiam has ended. The standard delay for ads on Constantiam is now 10 minutes.
+600s (Future); 600000ms (Impact)</span>
+
+                </div>
+
+
+
+            </div>
+    </div>
+</div><div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/embed/avatars/0.png" alt="Avatar" />
+    </div>
+    <div class="chatlog__messages">
+    <span class="chatlog__author-name" title="Deleted User#0000" data-user-id="456226577798135808" style="color: ">Deleted User</span>
+
+
+        <span class="chatlog__timestamp">07-Oct-18 07:41 PM</span>
+
+            <div class="chatlog__message " data-message-id="498641152304611338" id="message-498641152304611338">
+                <div class="chatlog__content">
+                    <span class="markdown"><span class="mention" style="color: #1F8B4C; background-color: rgba(31, 139, 76, 0.1); font-weight: 400;">@Creditor</span> Weekly Challenges already include the payment for the job the person is doing. Do not double pay for Weekly Challenges</span>
+
+                </div>
+
+
+
+            </div>
+    </div>
+</div><div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/embed/avatars/0.png" alt="Avatar" />
+    </div>
+    <div class="chatlog__messages">
+    <span class="chatlog__author-name" title="Deleted User#0000" data-user-id="456226577798135808" style="color: ">Deleted User</span>
+
+
+        <span class="chatlog__timestamp">12-Oct-18 02:34 AM</span>
+
+            <div class="chatlog__message " data-message-id="500194540863488020" id="message-500194540863488020">
+                <div class="chatlog__content">
+                    <span class="markdown"><span class="mention" style="color: #1F8B4C; background-color: rgba(31, 139, 76, 0.1); font-weight: 400;">@Creditor</span> - Regarding this week&#39;s challenge:
+
+To claim the reward, someone must submit one or more screenshots with 4 separate VoCo members on 2b2t. Chat must be visible, use +mcinfo to ensure that they are with actual VoCo members.</span>
+
+                </div>
+
+
+
+            </div>
+    </div>
+</div><div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/embed/avatars/0.png" alt="Avatar" />
+    </div>
+    <div class="chatlog__messages">
+    <span class="chatlog__author-name" title="Deleted User#0000" data-user-id="456226577798135808" style="color: ">Deleted User</span>
+
+
+        <span class="chatlog__timestamp">05-Nov-18 02:27 PM</span>
+
+            <div class="chatlog__message " data-message-id="509086259407486977" id="message-509086259407486977">
+                <div class="chatlog__content">
+                    <span class="markdown">A Management role has been created. This role includes the following positions:</span>
+
+                </div>
+
+                <div class="chatlog__attachment">
+                    <a href="https://cdn.discordapp.com/attachments/451631810640609290/509086258954240001/unknown.png">
+                        
+                            <img class="chatlog__attachment-thumbnail" src="https://cdn.discordapp.com/attachments/451631810640609290/509086258954240001/unknown.png" alt="Attachment" />
+                    </a>
+                </div>
+
+
+            </div>
+    </div>
+</div><div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/embed/avatars/0.png" alt="Avatar" />
+    </div>
+    <div class="chatlog__messages">
+    <span class="chatlog__author-name" title="Deleted User#0000" data-user-id="456226577798135808" style="color: ">Deleted User</span>
+
+
+        <span class="chatlog__timestamp">16-Nov-18 11:36 AM</span>
+
+            <div class="chatlog__message " data-message-id="513029692731686947" id="message-513029692731686947">
+                <div class="chatlog__content">
+                    <span class="markdown">VoCo is looking to fill the new position of <span class="mention" style="color: #7DFF8E; background-color: rgba(125, 255, 142, 0.1); font-weight: 400;">@Base Supervisor</span>
+
+As a Base Supervisor, your tasks would include:
+
+<strong>1.</strong> Reviewing and approving Staff Applications for new Base Directors, and once approved, adding them to the Base Application Spreadsheet.
+<strong>2.</strong> Overseeing VoCo Base Directors to ensure that they are running a minimum of 2 active bases at any given time (except when first starting).
+<strong>3.</strong> Managing the overall system that VoCo uses to build bases, proposing tweaks and changes where necessary to ensure maximum efficiency.
+<strong>4.</strong> Creating new base channels for Base Directors, and giving said Directors the perms to add the base members. YOU MUST KNOW HOW TO USE DISCORD PERMS CORRECTLY.</span>
+
+                        <span class="chatlog__edited-timestamp" title="16-Nov-18 11:38 AM">(edited)</span>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="513029748562198528" id="message-513029748562198528">
+                <div class="chatlog__content">
+                    <span class="markdown">If you are interested, please tag me in <span class="mention">#staff_chat</span> chat.</span>
+
+                </div>
+
+
+
+            </div>
+    </div>
+</div><div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/embed/avatars/0.png" alt="Avatar" />
+    </div>
+    <div class="chatlog__messages">
+    <span class="chatlog__author-name" title="Deleted User#0000" data-user-id="456226577798135808" style="color: ">Deleted User</span>
+
+
+        <span class="chatlog__timestamp">06-Dec-18 04:34 AM</span>
+
+            <div class="chatlog__message " data-message-id="520171114262036480" id="message-520171114262036480">
+                <div class="chatlog__content">
+                    <span class="markdown">All Staff members should always keep in mind that VoCo Staff channels are individually classified.
+
+Do not share information from any channel anywhere else, unless only the exact same users are present.</span>
+
+                </div>
+
+
+
+            </div>
+    </div>
+</div><div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/embed/avatars/0.png" alt="Avatar" />
+    </div>
+    <div class="chatlog__messages">
+    <span class="chatlog__author-name" title="Deleted User#0000" data-user-id="456226577798135808" style="color: ">Deleted User</span>
+
+
+        <span class="chatlog__timestamp">29-Dec-18 11:15 PM</span>
+
+            <div class="chatlog__message " data-message-id="528788284189573143" id="message-528788284189573143">
+                <div class="chatlog__content">
+                    <span class="markdown">current agenda:
+
+-set up and announce/launch VoSecurity, get VoSector 1 up and running
+-VoCo Census announcement
+-base applications and base supervisors
+-Finish the shop page on the website and expand current VCTN offerings
+-continue work on 420</span>
+
+                        <span class="chatlog__edited-timestamp" title="29-Dec-18 11:16 PM">(edited)</span>
+                </div>
+
+
+
+            </div>
+    </div>
+</div><div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/embed/avatars/0.png" alt="Avatar" />
+    </div>
+    <div class="chatlog__messages">
+    <span class="chatlog__author-name" title="Deleted User#0000" data-user-id="456226577798135808" style="color: ">Deleted User</span>
+
+
+        <span class="chatlog__timestamp">31-Dec-18 12:22 PM</span>
+
+            <div class="chatlog__message " data-message-id="529348642872623114" id="message-529348642872623114">
+                <div class="chatlog__content">
+                    <span class="markdown"><span class="mention" style="color: #1F8B4C; background-color: rgba(31, 139, 76, 0.1); font-weight: 400;">@Creditor</span> I just released the VoCo 2018 Census and there is a <img class="emoji " alt="vcn" title="vcn" src="https://cdn.discordapp.com/emojis/393366662042091520.png" />100 VoCoin reward for completing it.
+
+To redeem, verify their screenshot with the time and completion screen, and <strong>check the spreadsheet below to make sure they gave compelling answers.</strong>
+No one word answers or obviously half-assed responses just trying to get VoCoin.
+
+You don&#39;t have to thoroughly read every answer, just skim over and make sure they actually put some effort into it.
+<a href="https://docs.google.com/spreadsheets/d/1wk0xLL4e_X54JuqzO9P-5sigTUBXb_hwX6xDYPLHXWs/edit?usp=sharing">https://docs.google.com/spreadsheets/d/1wk0xLL4e_X54JuqzO9P-5sigTUBXb_hwX6xDYPLHXWs/edit?usp=sharing</a></span>
+
+                </div>
+
+
+            <div class="chatlog__embed">
+                <div class="chatlog__embed-color-pill chatlog__embed-color-pill--default"></div>
+                <div class="chatlog__embed-content-container">
+                    <div class="chatlog__embed-content">
+                        <div class="chatlog__embed-text">
+
+                            <div class="chatlog__embed-title">
+                                <a class="chatlog__embed-title-link" href="https://docs.google.com/spreadsheets/d/1wk0xLL4e_X54JuqzO9P-5sigTUBXb_hwX6xDYPLHXWs/edit?usp=sharing"><span class="markdown">VoCo Census Feedback Form (Responses)</span></a>
+                            </div>
+
+                            <div class="chatlog__embed-description"><span class="markdown">Form Responses 1
+
+ Timestamp, What is your Discord name and Tag?, What is your rank&amp; how long have you been in VoCo?, Do you feel like you&#39; re interacting with the group in a meaningful way?, Why or why not?, How often are you online 2b2t? Do you think VoCo has enough events?...</span></div>
+
+                        </div>
+
+                        <div class="chatlog__embed-thumbnail-container">
+                            <a class="chatlog__embed-thumbnail-link" href="https://lh3.googleusercontent.com/Xup0FzL3c2bZ7Iwt2lUn9D4vHjHOV8AEb5choj-5oyoxgNiZGizUsL-gztcmB0lZPSwfWQ=w1200-h630-p">
+                                <img class="chatlog__embed-thumbnail" src="https://lh3.googleusercontent.com/Xup0FzL3c2bZ7Iwt2lUn9D4vHjHOV8AEb5choj-5oyoxgNiZGizUsL-gztcmB0lZPSwfWQ=w1200-h630-p" alt="Thumbnail" />
+                            </a>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+
+            </div>
+            <div class="chatlog__message " data-message-id="529348795113144340" id="message-529348795113144340">
+                <div class="chatlog__content">
+                    <span class="markdown">(p.s. To read the answers click in the cells and they will appear at the top.)</span>
+
+                </div>
+
+
+
+            </div>
+    </div>
+</div><div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/embed/avatars/0.png" alt="Avatar" />
+    </div>
+    <div class="chatlog__messages">
+    <span class="chatlog__author-name" title="Deleted User#0000" data-user-id="456226577798135808" style="color: ">Deleted User</span>
+
+
+        <span class="chatlog__timestamp">02-Jan-19 09:32 PM</span>
+
+            <div class="chatlog__message " data-message-id="530211811996467212" id="message-530211811996467212">
+                <div class="chatlog__content">
+                    <span class="markdown"><span class="mention" style="color: #1F8B4C; background-color: rgba(31, 139, 76, 0.1); font-weight: 400;">@Creditor</span> Again <strong>Do not credit responses that do not contain substance.</strong> You should be able to tell when someone is just quickly typing in uncompelling answers just to get VoCoin.</span>
+
+                </div>
+
+
+
+            </div>
+    </div>
+</div><div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/embed/avatars/0.png" alt="Avatar" />
+    </div>
+    <div class="chatlog__messages">
+    <span class="chatlog__author-name" title="Deleted User#0000" data-user-id="456226577798135808" style="color: ">Deleted User</span>
+
+
+        <span class="chatlog__timestamp">15-Jan-19 02:38 AM</span>
+
+            <div class="chatlog__message " data-message-id="534637378242084864" id="message-534637378242084864">
+                <div class="chatlog__content">
+                    <span class="markdown">Let it be known that the term &quot;EOV&quot; hereby refers to &quot;Enemy Of VoCo&quot;</span>
+
+                </div>
+
+
+
+            </div>
+    </div>
+</div><div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/embed/avatars/0.png" alt="Avatar" />
+    </div>
+    <div class="chatlog__messages">
+    <span class="chatlog__author-name" title="Deleted User#0000" data-user-id="456226577798135808" style="color: ">Deleted User</span>
+
+
+        <span class="chatlog__timestamp">05-Feb-19 10:23 AM</span>
+
+            <div class="chatlog__message " data-message-id="542364721349918741" id="message-542364721349918741">
+                <div class="chatlog__content">
+                    <span class="markdown">Reminder that all Staff members are <strong>required</strong> to have Two Factor Authentication enabled on their Discord account along with a secure password.</span>
+
+                </div>
+
+
+
+                <div class="chatlog__reactions">
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="👌" title="👌" src="https://twemoji.maxcdn.com/2/72x72/1f44c.png" />
+                            <span class="chatlog__reaction-count">4</span>
+                        </div>
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="shkrelied" title="shkrelied" src="https://cdn.discordapp.com/emojis/494681216432209920.png" />
+                            <span class="chatlog__reaction-count">2</span>
+                        </div>
+                </div>
+            </div>
+    </div>
+</div><div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/embed/avatars/0.png" alt="Avatar" />
+    </div>
+    <div class="chatlog__messages">
+    <span class="chatlog__author-name" title="Deleted User#0000" data-user-id="456226577798135808" style="color: ">Deleted User</span>
+
+
+        <span class="chatlog__timestamp">13-Feb-19 10:56 PM</span>
+
+            <div class="chatlog__message " data-message-id="545453305137201162" id="message-545453305137201162">
+                <div class="chatlog__content">
+                    <span class="markdown">Recruiters: The VoCo Recruitment tutorial has been re-organized to be more structured and as unambiguous as possible.</span>
+
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="545454622928666654" id="message-545454622928666654">
+                <div class="chatlog__content">
+                    <span class="markdown">Also a reminder: After processing an application, you must right click on the date cell and leave a comment explaining why you chose to Accept/Deny each applicant.</span>
+
+                </div>
+
+
+
+                <div class="chatlog__reactions">
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="troll" title="troll" src="https://cdn.discordapp.com/emojis/329441732485971979.png" />
+                            <span class="chatlog__reaction-count">3</span>
+                        </div>
+                </div>
+            </div>
+    </div>
+</div><div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/embed/avatars/0.png" alt="Avatar" />
+    </div>
+    <div class="chatlog__messages">
+    <span class="chatlog__author-name" title="Deleted User#0000" data-user-id="456226577798135808" style="color: ">Deleted User</span>
+
+
+        <span class="chatlog__timestamp">14-Feb-19 02:14 AM</span>
+
+            <div class="chatlog__message " data-message-id="545503009883291659" id="message-545503009883291659">
+                <div class="chatlog__content">
+                    <span class="markdown">The Staff role and the Management role have been switched, from now on:
+
+Staff = Any VoCo Staff role such as Recruiter, Vendor, Builder, Organizer, etc.
+Management = First Class™ and above
+
+As such, #management has been renamed to <span class="mention">#staff_chat</span>.</span>
+
+                </div>
+
+
+
+            </div>
+    </div>
+</div><div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/embed/avatars/0.png" alt="Avatar" />
+    </div>
+    <div class="chatlog__messages">
+    <span class="chatlog__author-name" title="Deleted User#0000" data-user-id="456226577798135808" style="color: ">Deleted User</span>
+
+
+        <span class="chatlog__timestamp">16-Feb-19 07:55 PM</span>
+
+            <div class="chatlog__message " data-message-id="546494941376020480" id="message-546494941376020480">
+                <div class="chatlog__content">
+                    <span class="markdown">Anyone wanna be <span class="mention" style="color: #7DFF8E; background-color: rgba(125, 255, 142, 0.1); font-weight: 400;">@Base Supervisor</span> ?</span>
+
+                </div>
+
+
+
+                <div class="chatlog__reactions">
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="🇸" title="🇸" src="https://twemoji.maxcdn.com/2/72x72/1f1f8.png" />
+                            <span class="chatlog__reaction-count">3</span>
+                        </div>
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="🇺" title="🇺" src="https://twemoji.maxcdn.com/2/72x72/1f1fa.png" />
+                            <span class="chatlog__reaction-count">3</span>
+                        </div>
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="👌" title="👌" src="https://twemoji.maxcdn.com/2/72x72/1f44c.png" />
+                            <span class="chatlog__reaction-count">2</span>
+                        </div>
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="🇷" title="🇷" src="https://twemoji.maxcdn.com/2/72x72/1f1f7.png" />
+                            <span class="chatlog__reaction-count">3</span>
+                        </div>
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="🇪" title="🇪" src="https://twemoji.maxcdn.com/2/72x72/1f1ea.png" />
+                            <span class="chatlog__reaction-count">3</span>
+                        </div>
+                </div>
+            </div>
+    </div>
+</div><div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/embed/avatars/0.png" alt="Avatar" />
+    </div>
+    <div class="chatlog__messages">
+    <span class="chatlog__author-name" title="Deleted User#0000" data-user-id="456226577798135808" style="color: ">Deleted User</span>
+
+
+        <span class="chatlog__timestamp">07-Mar-19 07:29 AM</span>
+
+            <div class="chatlog__message " data-message-id="553192501125840899" id="message-553192501125840899">
+                <div class="chatlog__content">
+                    <span class="markdown">Due to the influx of new players to the server and the resulting increase in applicants to The Vortex Coalition, the reward for processing applications has been increased to 4 VoCoin™ per application. Be sure to credit yourself appropriately in <span class="mention">#staff-wages</span> or contact somebody with credit permissions to credit you.</span>
+
+                        <span class="chatlog__edited-timestamp" title="07-Mar-19 07:30 AM">(edited)</span>
+                </div>
+
+
+
+            </div>
+    </div>
+</div><div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/embed/avatars/0.png" alt="Avatar" />
+    </div>
+    <div class="chatlog__messages">
+    <span class="chatlog__author-name" title="Deleted User#0000" data-user-id="456226577798135808" style="color: ">Deleted User</span>
+
+
+        <span class="chatlog__timestamp">15-Mar-19 12:03 PM</span>
+
+            <div class="chatlog__message " data-message-id="556145353330655232" id="message-556145353330655232">
+                <div class="chatlog__content">
+                    <span class="markdown">Pinned a message.</span>
+
+                </div>
+
+
+
+            </div>
+    </div>
+</div><div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/embed/avatars/0.png" alt="Avatar" />
+    </div>
+    <div class="chatlog__messages">
+    <span class="chatlog__author-name" title="Deleted User#0000" data-user-id="456226577798135808" style="color: ">Deleted User</span>
+
+
+        <span class="chatlog__timestamp">05-Apr-19 11:24 PM</span>
+
+            <div class="chatlog__message " data-message-id="563927100831301686" id="message-563927100831301686">
+                <div class="chatlog__content">
+                    <span class="markdown">I need someone who can tidy up and update The Vortex Coalition page on the 2b2t Wiki, adding pictures and new information.
+
+Will pay a good amount of VoCoin™ for some quality edits to the page: <a href="https://2b2t.miraheze.org/wiki/The_Vortex_Coalition">https://2b2t.miraheze.org/wiki/The_Vortex_Coalition</a></span>
+
+                </div>
+
+
+            <div class="chatlog__embed">
+                <div class="chatlog__embed-color-pill chatlog__embed-color-pill--default"></div>
+                <div class="chatlog__embed-content-container">
+                    <div class="chatlog__embed-content">
+                        <div class="chatlog__embed-text">
+
+                            <div class="chatlog__embed-title">
+                                <a class="chatlog__embed-title-link" href="https://2b2t.miraheze.org/wiki/The_Vortex_Coalition"><span class="markdown">The Vortex Coalition</span></a>
+                            </div>
+
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+            </div>
+
+            </div>
+    </div>
+</div><div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/embed/avatars/0.png" alt="Avatar" />
+    </div>
+    <div class="chatlog__messages">
+    <span class="chatlog__author-name" title="Deleted User#0000" data-user-id="456226577798135808" style="color: ">Deleted User</span>
+
+
+        <span class="chatlog__timestamp">10-Apr-19 10:25 PM</span>
+
+            <div class="chatlog__message " data-message-id="565724116443987968" id="message-565724116443987968">
+                <div class="chatlog__content">
+                    <span class="markdown">Reminder to <span class="mention" style="color: #11BE7B; background-color: rgba(17, 190, 123, 0.1); font-weight: 400;">@Recruiter</span>s: After processing an application, you must right click on the date cell and leave a comment explaining why you chose to Accept/Deny each applicant.</span>
+
+                </div>
+
+
+
+            </div>
+    </div>
+</div><div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/embed/avatars/0.png" alt="Avatar" />
+    </div>
+    <div class="chatlog__messages">
+    <span class="chatlog__author-name" title="Deleted User#0000" data-user-id="456226577798135808" style="color: ">Deleted User</span>
+
+
+        <span class="chatlog__timestamp">14-Apr-19 04:01 PM</span>
+
+            <div class="chatlog__message " data-message-id="567076963110617098" id="message-567076963110617098">
+                <div class="chatlog__content">
+                    <span class="markdown">Vortex Coalition Management is working on a comprehensive announcement regarding the milse113 situation that will detail why he was originally banned as well as his numerous dishonest and immoral actions against VoCo.
+
+His (outlandish) goal is to cause mass disruption in VoCo by manipulating members into believing his deceitful arguments regarding the IP addresses he stole, which we have already debunked in <span class="mention">#private_announcements</span>. He is a child who is throwing a fit because he was banned.
+
+Our comprehensive announcement will also include vast amounts of insider information we have on milse&#39;s actions, including his decision to lie to members in attempts to gain supporters, like in this screenshot where they openly admit their &quot;VoCo logs IPs&quot; story is bullshit (<strong>which is still classified, do not share</strong>):</span>
+
+                </div>
+
+                <div class="chatlog__attachment">
+                    <a href="https://cdn.discordapp.com/attachments/451631810640609290/567076962615427073/Screenshot_20190408-170420_Discord.png">
+                        
+                            <img class="chatlog__attachment-thumbnail" src="https://cdn.discordapp.com/attachments/451631810640609290/567076962615427073/Screenshot_20190408-170420_Discord.png" alt="Attachment" />
+                    </a>
+                </div>
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="567077025156694026" id="message-567077025156694026">
+                <div class="chatlog__content">
+                    <span class="markdown">We advise all staff to not entertain milse and his ridiculous claims as it will only motivate him to continue spreading his false narrative.</span>
+
+                </div>
+
+
+
+                <div class="chatlog__reactions">
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="🇬" title="🇬" src="https://twemoji.maxcdn.com/2/72x72/1f1ec.png" />
+                            <span class="chatlog__reaction-count">2</span>
+                        </div>
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="🇴" title="🇴" src="https://twemoji.maxcdn.com/2/72x72/1f1f4.png" />
+                            <span class="chatlog__reaction-count">2</span>
+                        </div>
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="🇱" title="🇱" src="https://twemoji.maxcdn.com/2/72x72/1f1f1.png" />
+                            <span class="chatlog__reaction-count">2</span>
+                        </div>
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="🇩" title="🇩" src="https://twemoji.maxcdn.com/2/72x72/1f1e9.png" />
+                            <span class="chatlog__reaction-count">2</span>
+                        </div>
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="🇪" title="🇪" src="https://twemoji.maxcdn.com/2/72x72/1f1ea.png" />
+                            <span class="chatlog__reaction-count">2</span>
+                        </div>
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="🇳" title="🇳" src="https://twemoji.maxcdn.com/2/72x72/1f1f3.png" />
+                            <span class="chatlog__reaction-count">2</span>
+                        </div>
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="🇦🇿" title="🇦🇿" src="https://twemoji.maxcdn.com/2/72x72/1f1e6-1f1ff.png" />
+                            <span class="chatlog__reaction-count">3</span>
+                        </div>
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="❤" title="❤" src="https://twemoji.maxcdn.com/2/72x72/2764.png" />
+                            <span class="chatlog__reaction-count">1</span>
+                        </div>
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="🙏" title="🙏" src="https://twemoji.maxcdn.com/2/72x72/1f64f.png" />
+                            <span class="chatlog__reaction-count">1</span>
+                        </div>
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="⬅" title="⬅" src="https://twemoji.maxcdn.com/2/72x72/2b05.png" />
+                            <span class="chatlog__reaction-count">2</span>
+                        </div>
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="eyes4" title="eyes4" src="https://cdn.discordapp.com/emojis/471371470879326228.png" />
+                            <span class="chatlog__reaction-count">1</span>
+                        </div>
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="thonk" title="thonk" src="https://cdn.discordapp.com/emojis/346527365188419594.png" />
+                            <span class="chatlog__reaction-count">1</span>
+                        </div>
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="voco" title="voco" src="https://cdn.discordapp.com/emojis/270134098347950080.png" />
+                            <span class="chatlog__reaction-count">3</span>
+                        </div>
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="sexyrick" title="sexyrick" src="https://cdn.discordapp.com/emojis/553297386110320651.gif" />
+                            <span class="chatlog__reaction-count">3</span>
+                        </div>
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="thanksneon" title="thanksneon" src="https://cdn.discordapp.com/emojis/549877162866638849.gif" />
+                            <span class="chatlog__reaction-count">2</span>
+                        </div>
+                </div>
+            </div>
+    </div>
+</div><div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/embed/avatars/0.png" alt="Avatar" />
+    </div>
+    <div class="chatlog__messages">
+    <span class="chatlog__author-name" title="Deleted User#0000" data-user-id="456226577798135808" style="color: ">Deleted User</span>
+
+
+        <span class="chatlog__timestamp">27-Apr-19 07:45 PM</span>
+
+            <div class="chatlog__message " data-message-id="571844397168197632" id="message-571844397168197632">
+                <div class="chatlog__content">
+                    <span class="markdown">A reminder to VoCo Staff: <strong>We cannot stress this enough: <u>Do not interact with milse113</u>. You are wasting your time and just causing him to want to continue his attempts to get people to listen to him</strong>
+
+I don&#39;t care if you&#39;re trying to &quot;inside&quot; or make him think you&#39;re cool with him to try and get info: <strong>Don&#39;t</strong>. The more people he believes are on his side, or even will listen to him, the more attention he gets which motivates him to continue his obsession over our group.</span>
+
+                </div>
+
+
+
+                <div class="chatlog__reactions">
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="vcn" title="vcn" src="https://cdn.discordapp.com/emojis/393366662042091520.png" />
+                            <span class="chatlog__reaction-count">5</span>
+                        </div>
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="🇦🇿" title="🇦🇿" src="https://twemoji.maxcdn.com/2/72x72/1f1e6-1f1ff.png" />
+                            <span class="chatlog__reaction-count">2</span>
+                        </div>
+                </div>
+            </div>
+    </div>
+</div><div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/embed/avatars/0.png" alt="Avatar" />
+    </div>
+    <div class="chatlog__messages">
+    <span class="chatlog__author-name" title="Deleted User#0000" data-user-id="456226577798135808" style="color: ">Deleted User</span>
+
+
+        <span class="chatlog__timestamp">04-May-19 03:25 AM</span>
+
+            <div class="chatlog__message " data-message-id="574134600343879692" id="message-574134600343879692">
+                <div class="chatlog__content">
+                    <span class="markdown">Soon I am going on break until Phase V.
+
+If anyone has any questions or needs to talk with me before I leave, I will be around for another day or so.
+
+VoCo has an expansive and structured staff team, you should all be able to run things smoothly while I am gone.</span>
+
+                </div>
+
+
+
+                <div class="chatlog__reactions">
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="🇦🇿" title="🇦🇿" src="https://twemoji.maxcdn.com/2/72x72/1f1e6-1f1ff.png" />
+                            <span class="chatlog__reaction-count">4</span>
+                        </div>
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="😢" title="😢" src="https://twemoji.maxcdn.com/2/72x72/1f622.png" />
+                            <span class="chatlog__reaction-count">7</span>
+                        </div>
+                </div>
+            </div>
+    </div>
+</div><div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/embed/avatars/0.png" alt="Avatar" />
+    </div>
+    <div class="chatlog__messages">
+    <span class="chatlog__author-name" title="Deleted User#0000" data-user-id="456226577798135808" style="color: ">Deleted User</span>
+
+
+        <span class="chatlog__timestamp">09-May-19 03:35 PM</span>
+
+            <div class="chatlog__message " data-message-id="576130189529186305" id="message-576130189529186305">
+                <div class="chatlog__content">
+                    <span class="markdown">To clarify, credit and application jobs have returned to their normal payouts.</span>
+
+                </div>
+
+
+
+            </div>
+    </div>
+</div><div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/embed/avatars/0.png" alt="Avatar" />
+    </div>
+    <div class="chatlog__messages">
+    <span class="chatlog__author-name" title="Deleted User#0000" data-user-id="456226577798135808" style="color: ">Deleted User</span>
+
+
+        <span class="chatlog__timestamp">28-May-19 08:56 PM</span>
+
+            <div class="chatlog__message " data-message-id="583096271385001984" id="message-583096271385001984">
+                <div class="chatlog__content">
+                    <span class="markdown"><span class="mention" style="color: #1F8B4C; background-color: rgba(31, 139, 76, 0.1); font-weight: 400;">@Creditor</span> make sure you are checking to see if people are over the weekly limit. Also be sure to list a reason for credits to make it easier when others are checking.</span>
+
+                        <span class="chatlog__edited-timestamp" title="28-May-19 08:56 PM">(edited)</span>
+                </div>
+
+
+
+                <div class="chatlog__reactions">
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="🇦🇿" title="🇦🇿" src="https://twemoji.maxcdn.com/2/72x72/1f1e6-1f1ff.png" />
+                            <span class="chatlog__reaction-count">1</span>
+                        </div>
+                </div>
+            </div>
+    </div>
+</div><div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/embed/avatars/0.png" alt="Avatar" />
+    </div>
+    <div class="chatlog__messages">
+    <span class="chatlog__author-name" title="Deleted User#0000" data-user-id="456226577798135808" style="color: ">Deleted User</span>
+
+
+        <span class="chatlog__timestamp">15-Jun-19 03:49 PM</span>
+
+            <div class="chatlog__message " data-message-id="589541943881629706" id="message-589541943881629706">
+                <div class="chatlog__content">
+                    <span class="markdown"><span class="mention" style="color: #1F8B4C; background-color: rgba(31, 139, 76, 0.1); font-weight: 400;">@Creditor</span> <strong>Reminder</strong> VoPhotography submissions must be posted to the VoCo subreddit
+
+Also - Be aware of the new jobs, bonuses, and temporary boosts outlined in <span class="mention">#announcements</span> under the &quot;New Updates&quot; section!</span>
+
+                        <span class="chatlog__edited-timestamp" title="15-Jun-19 03:49 PM">(edited)</span>
+                </div>
+
+
+
+                <div class="chatlog__reactions">
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="🇦🇿" title="🇦🇿" src="https://twemoji.maxcdn.com/2/72x72/1f1e6-1f1ff.png" />
+                            <span class="chatlog__reaction-count">1</span>
+                        </div>
+                </div>
+            </div>
+    </div>
+</div><div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/embed/avatars/0.png" alt="Avatar" />
+    </div>
+    <div class="chatlog__messages">
+    <span class="chatlog__author-name" title="Deleted User#0000" data-user-id="456226577798135808" style="color: ">Deleted User</span>
+
+
+        <span class="chatlog__timestamp">24-Jun-19 01:41 AM</span>
+
+            <div class="chatlog__message " data-message-id="592590165122351114" id="message-592590165122351114">
+                <div class="chatlog__content">
+                    <span class="markdown"><span class="mention" style="color: #FF6247; background-color: rgba(255, 98, 71, 0.1); font-weight: 400;">@Moderator</span>s: If you see VoCo members annoying known members of the 2b community (such as iTristan or Fit) by pinging them for no reason or excessively, warn them to stop. If it happens again mute as warranted.</span>
+
+                </div>
+
+
+
+                <div class="chatlog__reactions">
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="✅" title="✅" src="https://twemoji.maxcdn.com/2/72x72/2705.png" />
+                            <span class="chatlog__reaction-count">1</span>
+                        </div>
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="🇦🇿" title="🇦🇿" src="https://twemoji.maxcdn.com/2/72x72/1f1e6-1f1ff.png" />
+                            <span class="chatlog__reaction-count">1</span>
+                        </div>
+                </div>
+            </div>
+    </div>
+</div><div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/embed/avatars/0.png" alt="Avatar" />
+    </div>
+    <div class="chatlog__messages">
+    <span class="chatlog__author-name" title="Deleted User#0000" data-user-id="456226577798135808" style="color: ">Deleted User</span>
+
+
+        <span class="chatlog__timestamp">24-Jun-19 03:49 PM</span>
+
+            <div class="chatlog__message " data-message-id="592803478859153428" id="message-592803478859153428">
+                <div class="chatlog__content">
+                    <span class="markdown"><span class="mention" style="color: #1F8B4C; background-color: rgba(31, 139, 76, 0.1); font-weight: 400;">@Creditor</span> Be aware of the new jobs payout updates in <span class="mention">#private_announcements</span></span>
+
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="592803731657981982" id="message-592803731657981982">
+                <div class="chatlog__content">
+                    <span class="markdown">Remember that when you&#39;re paying out a job with a payment range, to judge the payment based on effort and amount of work.</span>
+
+                </div>
+
+
+
+                <div class="chatlog__reactions">
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="👌" title="👌" src="https://twemoji.maxcdn.com/2/72x72/1f44c.png" />
+                            <span class="chatlog__reaction-count">2</span>
+                        </div>
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="🇦🇿" title="🇦🇿" src="https://twemoji.maxcdn.com/2/72x72/1f1e6-1f1ff.png" />
+                            <span class="chatlog__reaction-count">1</span>
+                        </div>
+                </div>
+            </div>
+    </div>
+</div><div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/embed/avatars/0.png" alt="Avatar" />
+    </div>
+    <div class="chatlog__messages">
+    <span class="chatlog__author-name" title="Deleted User#0000" data-user-id="456226577798135808" style="color: ">Deleted User</span>
+
+
+        <span class="chatlog__timestamp">29-Jun-19 03:54 PM</span>
+
+            <div class="chatlog__message " data-message-id="594616643418718239" id="message-594616643418718239">
+                <div class="chatlog__content">
+                    <span class="markdown"><span class="mention" style="color: #65F352; background-color: rgba(101, 243, 82, 0.1); font-weight: 400;">@Organizer</span> New rules:
+
+- All Events must be guarded by at least 2 fully geared (ready to pvp) VoSec Members
+- Event coordinates must be kept confidential until the voice chat for the event begins.
+- Coords should be given out in the voice chat (take a screenshot of the current vc members so we have a list of possible leakers)
+- During event attacks, non-pvp members should log out so VoSec can do their jobs.
+- Remember that VoSec&#39;s goal is to <strong>Distract, Divert, and Delay</strong> enemies</span>
+
+                </div>
+
+
+
+                <div class="chatlog__reactions">
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="🇦🇿" title="🇦🇿" src="https://twemoji.maxcdn.com/2/72x72/1f1e6-1f1ff.png" />
+                            <span class="chatlog__reaction-count">1</span>
+                        </div>
+                </div>
+            </div>
+    </div>
+</div><div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/391924394282319875/175f5a002b65f94c7333ed9710029cf0.png" alt="Avatar" />
+    </div>
+    <div class="chatlog__messages">
+    <span class="chatlog__author-name" title="fowlup67#4493" data-user-id="391924394282319875" style="color: #E74C3C">fowlup67</span>
+
+
+        <span class="chatlog__timestamp">03-Jul-19 04:29 PM</span>
+
+            <div class="chatlog__message " data-message-id="596074989715718144" id="message-596074989715718144">
+                <div class="chatlog__content">
+                    <span class="markdown">We ask that all staff do not engage with members of The Emperium if they attempt to contact you and to inform an Executive if they do so.</span>
+
+                </div>
+
+
+
+                <div class="chatlog__reactions">
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="👌" title="👌" src="https://twemoji.maxcdn.com/2/72x72/1f44c.png" />
+                            <span class="chatlog__reaction-count">3</span>
+                        </div>
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="🆗" title="🆗" src="https://twemoji.maxcdn.com/2/72x72/1f197.png" />
+                            <span class="chatlog__reaction-count">2</span>
+                        </div>
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="🇦🇿" title="🇦🇿" src="https://twemoji.maxcdn.com/2/72x72/1f1e6-1f1ff.png" />
+                            <span class="chatlog__reaction-count">2</span>
+                        </div>
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="redpill" title="redpill" src="https://cdn.discordapp.com/emojis/362911807138037761.png" />
+                            <span class="chatlog__reaction-count">2</span>
+                        </div>
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="vcn" title="vcn" src="https://cdn.discordapp.com/emojis/419920177233133569.png" />
+                            <span class="chatlog__reaction-count">2</span>
+                        </div>
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="crabrave" title="crabrave" src="https://cdn.discordapp.com/emojis/544463665626218506.gif" />
+                            <span class="chatlog__reaction-count">2</span>
+                        </div>
+                </div>
+            </div>
+    </div>
+</div><div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/embed/avatars/0.png" alt="Avatar" />
+    </div>
+    <div class="chatlog__messages">
+    <span class="chatlog__author-name" title="Deleted User#0000" data-user-id="456226577798135808" style="color: ">Deleted User</span>
+
+
+        <span class="chatlog__timestamp">04-Jul-19 05:29 PM</span>
+
+            <div class="chatlog__message " data-message-id="596452426865967114" id="message-596452426865967114">
+                <div class="chatlog__content">
+                    <span class="markdown"><span class="mention" style="color: #2ECC71; background-color: rgba(46, 204, 113, 0.1); font-weight: 400;">@Base Director</span> for the time being, do not let anybody into a base that has not verified an ingame account using the +auth command. This can be checked be looking to see if they have the &#39;Active&#39; role.</span>
+
+                </div>
+
+
+
+                <div class="chatlog__reactions">
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="🇦🇿" title="🇦🇿" src="https://twemoji.maxcdn.com/2/72x72/1f1e6-1f1ff.png" />
+                            <span class="chatlog__reaction-count">2</span>
+                        </div>
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="ripplevoco" title="ripplevoco" src="https://cdn.discordapp.com/emojis/589452656888512538.gif" />
+                            <span class="chatlog__reaction-count">1</span>
+                        </div>
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="👍" title="👍" src="https://twemoji.maxcdn.com/2/72x72/1f44d.png" />
+                            <span class="chatlog__reaction-count">1</span>
+                        </div>
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="voco" title="voco" src="https://cdn.discordapp.com/emojis/270134098347950080.png" />
+                            <span class="chatlog__reaction-count">2</span>
+                        </div>
+                </div>
+            </div>
+    </div>
+</div><div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/575043340563775518/f1e791016ce4aacdfa8b9e01d30c09d5.png" alt="Avatar" />
+    </div>
+    <div class="chatlog__messages">
+    <span class="chatlog__author-name" title="coltsnid#5946" data-user-id="575043340563775518" style="color: #3FFFB1">coltsnid</span>
+
+
+        <span class="chatlog__timestamp">16-Jul-19 08:08 PM</span>
+
+            <div class="chatlog__message " data-message-id="600841130187161601" id="message-600841130187161601">
+                <div class="chatlog__content">
+                    <span class="markdown"><strong>Private Staff Announcement, Do Not Share:</strong>
+Following the dissolution of our alliance with Emperium, and several of their members&#39; accounts being terminated for Discord TOS violations, their group had already griefed the small handful of bases/stashes they had access to, and ran out of any way to work against us.
+
+In recent days, multiple VoCo Staff Members have shown us screenshots of higher-ranking Emperium members contacting them and asking them to inside VoCo.  The general theme tends to be &quot;you are liked in Emperium, VoCo talks shit about you&quot;.  They are using basic manipulation tactics to spread doubt, falsely claiming that our management team is lazy, inactive, or does not care about VoCo members, etc.  Keep in mind that just a few weeks ago, Emperium had nothing but terrible things to say about all VoCo members, and now they&#39;re trying to recruit them in a desperate attempt to gain info.
+
+If you ever feel as if you are undervalued or under-rewarded in VoCo, please feel completely free to contact me or the Executive Team, so that we can help you enjoy what you do here.  We try to make sure every single member feels appreciated for their contributions to the group.  Despite all that we do, the main point of The Vortex Coalition is to have great experiences, make friends in a fantastic community, and above all, enjoy ourselves.
+
+<u><em>To clarify about the recent inactivity from Salamander and I:</em></u>
+For the past week or so, I have been out of town and away from my PC.  I was still chiming in here and there in the Discord on mobile when I was able to.  However, during my absence, mine and Salamander&#39;s Discord accounts were falsely reported and terminated.
+We are both working with Discord Support in an attempt to have our accounts restored.  This was a setback for sure, but mostly because I was unable to switch to a new account until I was back at my PC. If you have sent me a DM in the past week, I&#39;d suggest sending it again to this account so that I can read it.</span>
+
+                </div>
+
+
+
+                <div class="chatlog__reactions">
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="👍" title="👍" src="https://twemoji.maxcdn.com/2/72x72/1f44d.png" />
+                            <span class="chatlog__reaction-count">8</span>
+                        </div>
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="🆗" title="🆗" src="https://twemoji.maxcdn.com/2/72x72/1f197.png" />
+                            <span class="chatlog__reaction-count">5</span>
+                        </div>
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="🇦🇿" title="🇦🇿" src="https://twemoji.maxcdn.com/2/72x72/1f1e6-1f1ff.png" />
+                            <span class="chatlog__reaction-count">2</span>
+                        </div>
+                </div>
+            </div>
+    </div>
+</div><div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/575043340563775518/f1e791016ce4aacdfa8b9e01d30c09d5.png" alt="Avatar" />
+    </div>
+    <div class="chatlog__messages">
+    <span class="chatlog__author-name" title="coltsnid#5946" data-user-id="575043340563775518" style="color: #3FFFB1">coltsnid</span>
+
+
+        <span class="chatlog__timestamp">25-Jul-19 01:03 AM</span>
+
+            <div class="chatlog__message " data-message-id="603814468945969157" id="message-603814468945969157">
+                <div class="chatlog__content">
+                    <span class="markdown"><strong>Notice:</strong>
+
+Ideally, I do not need to personally sign off on staff members taking care of their typical responsibilities, such as Base Directors creating new bases, Organizers planning events, or VoSecurity protecting VoCo events or assets.
+
+Just be sure to openly propose and discuss your plans in their corresponding staff chats, so that other Staff, the Executives, and I can chime in and make sure everything is running smoothly, making tweaks as needed. If something is too important to be discussed in a staff chat, contact an Executive directly. 
+
+When all of the various VoCo Staff Departments perform their tasks without needing to be given permission to do so, it improves the ability for the Executive Team and I to manage the group, and ensure that we are running at maximum efficiency.
+
+We hope that you all understand that VoCo is a massive group comprised of hundreds of people. It can be difficult for our leadership to directly micro-manage every individual thing that goes on. This is why the Staff Team exists. Our work brings people together and makes 2b2t a better place. Thank you for reading.</span>
+
+                </div>
+
+
+
+            </div>
+    </div>
+</div><div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/599338084815077377/63c25f2feb784aac42f20c63ee8ea9c6.png" alt="Avatar" />
+    </div>
+    <div class="chatlog__messages">
+    <span class="chatlog__author-name" title="Salamander#4486" data-user-id="599338084815077377" style="color: #E91E63">Salamander</span>
+
+
+        <span class="chatlog__timestamp">16-Aug-19 04:38 PM</span>
+
+            <div class="chatlog__message " data-message-id="612022291412549662" id="message-612022291412549662">
+                <div class="chatlog__content">
+                    <span class="markdown">new <span class="mention">#recruiter_chat</span> for talking about recruitment related topics as <span class="mention">#recruitment</span> is often too cluttered with bot commands for conversation to take place</span>
+
+                </div>
+
+
+
+            </div>
+    </div>
+</div><div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/575043340563775518/f1e791016ce4aacdfa8b9e01d30c09d5.png" alt="Avatar" />
+    </div>
+    <div class="chatlog__messages">
+    <span class="chatlog__author-name" title="coltsnid#5946" data-user-id="575043340563775518" style="color: #3FFFB1">coltsnid</span>
+
+
+        <span class="chatlog__timestamp">22-Sep-19 09:33 PM</span>
+
+            <div class="chatlog__message " data-message-id="625504924200861705" id="message-625504924200861705">
+                <div class="chatlog__content">
+                    <span class="markdown">Official Announcement:
+
+The Vortex Coalition has just banned two junior Staff members: Skippy and Golden.
+
+The reasoning for this ban was due to a scheme between the two of them to create a VoClone splinter group and recruit members of VoCo for their own personal gain.
+
+Beware: they may try and manipulate more VoCo members into believing their lies; if any non-staff are asking questions or doubtful of VoCo Management regarding this situation, feel free to link them to this slideshow which contains the full story:
+
+<a href="https://docs.google.com/presentation/d/16a3dGZfcs_c_7DDU-ud5Zs9bqMfTZCsp555T7yrXKv8/edit?usp=sharing">https://docs.google.com/presentation/d/16a3dGZfcs_c_7DDU-ud5Zs9bqMfTZCsp555T7yrXKv8/edit?usp=sharing</a></span>
+
+                </div>
+
+                <div class="chatlog__attachment">
+                    <a href="https://cdn.discordapp.com/attachments/451631810640609290/625504924200861704/unknown.png">
+                        
+                            <img class="chatlog__attachment-thumbnail" src="https://cdn.discordapp.com/attachments/451631810640609290/625504924200861704/unknown.png" alt="Attachment" />
+                    </a>
+                </div>
+
+            <div class="chatlog__embed">
+                <div class="chatlog__embed-color-pill chatlog__embed-color-pill--default"></div>
+                <div class="chatlog__embed-content-container">
+                    <div class="chatlog__embed-content">
+                        <div class="chatlog__embed-text">
+
+                            <div class="chatlog__embed-title">
+                                <a class="chatlog__embed-title-link" href="https://docs.google.com/presentation/d/16a3dGZfcs_c_7DDU-ud5Zs9bqMfTZCsp555T7yrXKv8/edit?usp=sharing"><span class="markdown">Transparency Report</span></a>
+                            </div>
+
+                            <div class="chatlog__embed-description"><span class="markdown">Transparency Report Vortex Coalition Management Official Statement Use the “Present” button in the upper right to view in fullscreen mode if on desktop If on mobile, view in landscape orientation and use the fullscreen icon at the bottom Please read all information and ex...</span></div>
+
+                        </div>
+
+                        <div class="chatlog__embed-thumbnail-container">
+                            <a class="chatlog__embed-thumbnail-link" href="https://lh5.googleusercontent.com/ORpmyPLc1juNeCrvv0Deh9WJIZft2M1XdoZcLys5167lesoKzTy-kV8a6dxp5yTU2ciy8A=w1200-h630-p">
+                                <img class="chatlog__embed-thumbnail" src="https://lh5.googleusercontent.com/ORpmyPLc1juNeCrvv0Deh9WJIZft2M1XdoZcLys5167lesoKzTy-kV8a6dxp5yTU2ciy8A=w1200-h630-p" alt="Thumbnail" />
+                            </a>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+
+                <div class="chatlog__reactions">
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="👍" title="👍" src="https://twemoji.maxcdn.com/2/72x72/1f44d.png" />
+                            <span class="chatlog__reaction-count">2</span>
+                        </div>
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="upvote" title="upvote" src="https://cdn.discordapp.com/emojis/447113276543991834.png" />
+                            <span class="chatlog__reaction-count">2</span>
+                        </div>
+                </div>
+            </div>
+    </div>
+</div><div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/575043340563775518/f1e791016ce4aacdfa8b9e01d30c09d5.png" alt="Avatar" />
+    </div>
+    <div class="chatlog__messages">
+    <span class="chatlog__author-name" title="coltsnid#5946" data-user-id="575043340563775518" style="color: #3FFFB1">coltsnid</span>
+
+
+        <span class="chatlog__timestamp">23-Sep-19 03:11 PM</span>
+
+            <div class="chatlog__message " data-message-id="625771277533315113" id="message-625771277533315113">
+                <div class="chatlog__content">
+                    <span class="markdown">After receiving some feedback from Staff Members, it has come to Management&#39;s attention that the slideshow did not show the full extent of how much Golden and Skippy copied VoCo when creating their splinter group.
+
+We have added a new slide to the presentation (slide 19), which goes in depth with detailed evidence of their VoClone:</span>
+
+                </div>
+
+                <div class="chatlog__attachment">
+                    <a href="https://cdn.discordapp.com/attachments/451631810640609290/625771277533315112/unknown.png">
+                        
+                            <img class="chatlog__attachment-thumbnail" src="https://cdn.discordapp.com/attachments/451631810640609290/625771277533315112/unknown.png" alt="Attachment" />
+                    </a>
+                </div>
+
+
+                <div class="chatlog__reactions">
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="👍" title="👍" src="https://twemoji.maxcdn.com/2/72x72/1f44d.png" />
+                            <span class="chatlog__reaction-count">8</span>
+                        </div>
+                </div>
+            </div>
+    </div>
+</div><div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/575043340563775518/f1e791016ce4aacdfa8b9e01d30c09d5.png" alt="Avatar" />
+    </div>
+    <div class="chatlog__messages">
+    <span class="chatlog__author-name" title="coltsnid#5946" data-user-id="575043340563775518" style="color: #3FFFB1">coltsnid</span>
+
+
+        <span class="chatlog__timestamp">17-Oct-19 01:00 AM</span>
+
+            <div class="chatlog__message " data-message-id="634254407395049482" id="message-634254407395049482">
+                <div class="chatlog__content">
+                    <span class="markdown"><span class="mention" style="color: #FF6247; background-color: rgba(255, 98, 71, 0.1); font-weight: 400;">@Moderator</span> <span class="mention" style="color: #FF3D3D; background-color: rgba(255, 61, 61, 0.1); font-weight: 400;">@Management</span> You now have access to the new <span class="pre pre--inline">.lockdown</span> command on <span class="mention" title="Coltbot#8619">@Coltbot</span>.
+
+Using <span class="pre pre--inline">.lockdown</span> (or <span class="pre pre--inline">.lock</span>) in any channel will disable the ability for users without roles to send messages in public channels.
+
+This is to be used in the event of a server raid where our bots are down or not working, as happened the other day.
+
+Once the situation has been handled, you can use <span class="pre pre--inline">.unlock</span> to open channels back up to users without roles.</span>
+
+                </div>
+
+
+
+                <div class="chatlog__reactions">
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="👌" title="👌" src="https://twemoji.maxcdn.com/2/72x72/1f44c.png" />
+                            <span class="chatlog__reaction-count">2</span>
+                        </div>
+                </div>
+            </div>
+    </div>
+</div><div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/575043340563775518/f1e791016ce4aacdfa8b9e01d30c09d5.png" alt="Avatar" />
+    </div>
+    <div class="chatlog__messages">
+    <span class="chatlog__author-name" title="coltsnid#5946" data-user-id="575043340563775518" style="color: #3FFFB1">coltsnid</span>
+
+
+        <span class="chatlog__timestamp">19-Oct-19 09:44 PM</span>
+
+            <div class="chatlog__message " data-message-id="635292226829680640" id="message-635292226829680640">
+                <div class="chatlog__content">
+                    <span class="markdown">The Base Application and the Staff Application response spreadsheets have been set to private for reasons outlined in <span class="mention">#private_announcements</span> 
+
+<span class="mention" style="color: #2ECC71; background-color: rgba(46, 204, 113, 0.1); font-weight: 400;">@Base Director</span>s and any other staff who regularly need access to either of these spreadsheets should go to the respective pages, hit the &quot;Request Access&quot; button, and DM me the gmail address you are using so I can verify.</span>
+
+                        <span class="chatlog__edited-timestamp" title="19-Oct-19 10:02 PM">(edited)</span>
+                </div>
+
+
+
+            </div>
+    </div>
+</div><div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/391924394282319875/175f5a002b65f94c7333ed9710029cf0.png" alt="Avatar" />
+    </div>
+    <div class="chatlog__messages">
+    <span class="chatlog__author-name" title="fowlup67#4493" data-user-id="391924394282319875" style="color: #E74C3C">fowlup67</span>
+
+
+        <span class="chatlog__timestamp">24-Nov-19 03:34 PM</span>
+
+            <div class="chatlog__message " data-message-id="648260080797745210" id="message-648260080797745210">
+                <div class="chatlog__content">
+                    <span class="markdown">If there are any roles you are missing dm an executive</span>
+
+                </div>
+
+
+
+            </div>
+    </div>
+</div><div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/575043340563775518/f1e791016ce4aacdfa8b9e01d30c09d5.png" alt="Avatar" />
+    </div>
+    <div class="chatlog__messages">
+    <span class="chatlog__author-name" title="coltsnid#5946" data-user-id="575043340563775518" style="color: #3FFFB1">coltsnid</span>
+
+
+        <span class="chatlog__timestamp">29-Nov-19 03:26 AM</span>
+
+            <div class="chatlog__message " data-message-id="649889013834055681" id="message-649889013834055681">
+                <div class="chatlog__content">
+                    <span class="markdown">Looking for an Intern to help test VoQueue Alpha. Tasks will include:
+
+- Using the VoQueue service and identifying suggestions or issues
+- Working with future testers to help identify and log bugs
+- Helping with the rollout of VoQueue by offering support and assistance to users
+
+A VoQueue slot will be granted to the chosen intern free of charge during the Closed Alpha; however, during and after the Open Beta subsidized payment will be expected.
+
+DM me if you are interested</span>
+
+                </div>
+
+
+
+            </div>
+    </div>
+</div><div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/575043340563775518/f1e791016ce4aacdfa8b9e01d30c09d5.png" alt="Avatar" />
+    </div>
+    <div class="chatlog__messages">
+    <span class="chatlog__author-name" title="coltsnid#5946" data-user-id="575043340563775518" style="color: #3FFFB1">coltsnid</span>
+
+
+        <span class="chatlog__timestamp">25-Dec-19 07:29 AM</span>
+
+            <div class="chatlog__message " data-message-id="659372130160345089" id="message-659372130160345089">
+                <div class="chatlog__content">
+                    <span class="markdown">Merry Christmas VoCo! <img class="emoji " alt="🎁" title="🎁" src="https://twemoji.maxcdn.com/2/72x72/1f381.png" /></span>
+
+                </div>
+
+
+
+                <div class="chatlog__reactions">
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="voco" title="voco" src="https://cdn.discordapp.com/emojis/270134098347950080.png" />
+                            <span class="chatlog__reaction-count">8</span>
+                        </div>
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="vcn" title="vcn" src="https://cdn.discordapp.com/emojis/393366662042091520.png" />
+                            <span class="chatlog__reaction-count">5</span>
+                        </div>
+                </div>
+            </div>
+    </div>
+</div><div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/575043340563775518/f1e791016ce4aacdfa8b9e01d30c09d5.png" alt="Avatar" />
+    </div>
+    <div class="chatlog__messages">
+    <span class="chatlog__author-name" title="coltsnid#5946" data-user-id="575043340563775518" style="color: #3FFFB1">coltsnid</span>
+
+
+        <span class="chatlog__timestamp">03-Jan-20 06:54 AM</span>
+
+            <div class="chatlog__message " data-message-id="662624763264368640" id="message-662624763264368640">
+                <div class="chatlog__content">
+                    <span class="markdown">Great News!
+
+We will be allowing 3 VoCo Staff members to purchase an Early Access slot to participate in the VoQueue Closed Alpha.
+
+Early Access users will help us iron out issues with the Alpha, and give us critical feedback in the development of the service.
+
+Two slots will be sold for $5. The other slot will be sold to the highest VoCoin bidder in a blind auction.
+
+<strong>To bid, simply send a DM to <span class="mention" title="Coltbot#8619">@Coltbot</span> with the highest amount of VoCoin you would be willing to pay.</strong> The highest bid will be charged their bid and receive a VoQueue slot.
+Serious bids only. One bid per member.
+
+<strong>If you are interested in purchasing a $5 slot</strong>, simply DM <span class="mention" title="Coltbot#8619">@Coltbot</span> with &quot;$5 slot&quot;, the first two inquiries will receive the slots. One slot per member (just for the Closed Alpha).
+
+Bidding lasts for the next 12 hours.</span>
+
+                </div>
+
+
+
+                <div class="chatlog__reactions">
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="voqueue" title="voqueue" src="https://cdn.discordapp.com/emojis/659372523041062934.png" />
+                            <span class="chatlog__reaction-count">5</span>
+                        </div>
+                </div>
+            </div>
+    </div>
+</div><div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/575043340563775518/f1e791016ce4aacdfa8b9e01d30c09d5.png" alt="Avatar" />
+    </div>
+    <div class="chatlog__messages">
+    <span class="chatlog__author-name" title="coltsnid#5946" data-user-id="575043340563775518" style="color: #3FFFB1">coltsnid</span>
+
+
+        <span class="chatlog__timestamp">23-Jan-20 01:44 AM</span>
+
+            <div class="chatlog__message " data-message-id="669794510179401728" id="message-669794510179401728">
+                <div class="chatlog__content">
+                    <span class="markdown">Once again, toxic EOVs are messaging members trying to make VoCo look bad using old leaks (see <span class="mention">#member_announcements</span>).
+
+If any members ask you about this situation, simply let them know that this is an old leak, it won&#39;t negatively impact VoCo, and there&#39;s nothing to worry about.
+Make sure to stay composed in order to keep everyone calm. Keep all discussion of this to private channels. Also be sure to report everything you hear to Executives!</span>
+
+                </div>
+
+
+
+                <div class="chatlog__reactions">
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="voco" title="voco" src="https://cdn.discordapp.com/emojis/270134098347950080.png" />
+                            <span class="chatlog__reaction-count">4</span>
+                        </div>
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="sigwhite" title="sigwhite" src="https://cdn.discordapp.com/emojis/587702550917283871.png" />
+                            <span class="chatlog__reaction-count">3</span>
+                        </div>
+                </div>
+            </div>
+    </div>
+</div><div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/575043340563775518/f1e791016ce4aacdfa8b9e01d30c09d5.png" alt="Avatar" />
+    </div>
+    <div class="chatlog__messages">
+    <span class="chatlog__author-name" title="coltsnid#5946" data-user-id="575043340563775518" style="color: #3FFFB1">coltsnid</span>
+
+
+        <span class="chatlog__timestamp">01-Feb-20 04:13 PM</span>
+
+            <div class="chatlog__message " data-message-id="673274691984556071" id="message-673274691984556071">
+                <div class="chatlog__content">
+                    <span class="markdown"><span class="mention" style="color: #11BE7B; background-color: rgba(17, 190, 123, 0.1); font-weight: 400;">@Recruiter</span>s: Apps have fallen behind, and many Recruiters have become less active.
+
+This is a warning that inactive Recruiters will be demoted within the next week.</span>
+
+                </div>
+
+
+
+            </div>
+    </div>
+</div><div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/575043340563775518/f1e791016ce4aacdfa8b9e01d30c09d5.png" alt="Avatar" />
+    </div>
+    <div class="chatlog__messages">
+    <span class="chatlog__author-name" title="coltsnid#5946" data-user-id="575043340563775518" style="color: #3FFFB1">coltsnid</span>
+
+
+        <span class="chatlog__timestamp">14-Feb-20 07:25 AM</span>
+
+            <div class="chatlog__message " data-message-id="677852879331000341" id="message-677852879331000341">
+                <div class="chatlog__content">
+                    <span class="markdown">Notice:
+
+Due to the large number of base channels that we have accumulated over the years in this discord, from now on all new VoCo base channels will be made in our new VoCo Bases discord server.
+
+Base Directors will also have the ability to create their own base channels and add members themselves, without needing to contact an executive
+
+<a href="https://discord.gg/gHdc5hG">https://discord.gg/gHdc5hG</a></span>
+
+                </div>
+
+
+
+            </div>
+    </div>
+</div><div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/575043340563775518/f1e791016ce4aacdfa8b9e01d30c09d5.png" alt="Avatar" />
+    </div>
+    <div class="chatlog__messages">
+    <span class="chatlog__author-name" title="coltsnid#5946" data-user-id="575043340563775518" style="color: #3FFFB1">coltsnid</span>
+
+
+        <span class="chatlog__timestamp">22-Feb-20 04:49 PM</span>
+
+            <div class="chatlog__message " data-message-id="680893908020232226" id="message-680893908020232226">
+                <div class="chatlog__content">
+                    <span class="markdown"><span class="mention" style="color: #2ECC71; background-color: rgba(46, 204, 113, 0.1); font-weight: 400;">@Base Director</span> 
+
+All bases need to be moved to the new VoCo Bases Discord ^</span>
+
+                </div>
+
+
+
+            </div>
+    </div>
+</div><div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/575043340563775518/f1e791016ce4aacdfa8b9e01d30c09d5.png" alt="Avatar" />
+    </div>
+    <div class="chatlog__messages">
+    <span class="chatlog__author-name" title="coltsnid#5946" data-user-id="575043340563775518" style="color: #3FFFB1">coltsnid</span>
+
+
+        <span class="chatlog__timestamp">27-Feb-20 05:32 PM</span>
+
+            <div class="chatlog__message " data-message-id="682716799145345074" id="message-682716799145345074">
+                <div class="chatlog__content">
+                    <span class="markdown"><strong>VoQueue News:</strong>
+
+It seems that VoQueue may take a while to fully release, so we will not be waiting until then to take advantage of the technology.
+
+For the duration of the Closed Alpha, and/or until the current issues with VoQueue are fixed, the hardest working VoCo Staff members will be able to apply to get VoQueue slots for free.
+
+We will be starting with 5 free slots. To apply for a slot, just post in <span class="mention">#staff_chat</span> with a summary of how you will use your VoQueue slot to benefit VoCo and fulfill your staff duties.
+
+<em>It should be noted that if you become inactive or barely use your VoQueue slot for VoCo related tasks, your slot may be revoked.</em>
+
+<a href="https://joinvo.co/q">https://joinvo.co/q</a></span>
+
+                </div>
+
+
+            <div class="chatlog__embed">
+                <div class="chatlog__embed-color-pill chatlog__embed-color-pill--default"></div>
+                <div class="chatlog__embed-content-container">
+                    <div class="chatlog__embed-content">
+                        <div class="chatlog__embed-text">
+
+                            <div class="chatlog__embed-title">
+                                <a class="chatlog__embed-title-link" href="https://joinvo.co/q"><span class="markdown">VoQueue | The Vortex Coalition</span></a>
+                            </div>
+
+                            <div class="chatlog__embed-description"><span class="markdown">VoQueue is a Discord-integrated queue-skipping service and&#160;account monitoring suite</span></div>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+            </div>
+
+            </div>
+    </div>
+</div><div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/575043340563775518/f1e791016ce4aacdfa8b9e01d30c09d5.png" alt="Avatar" />
+    </div>
+    <div class="chatlog__messages">
+    <span class="chatlog__author-name" title="coltsnid#5946" data-user-id="575043340563775518" style="color: #3FFFB1">coltsnid</span>
+
+
+        <span class="chatlog__timestamp">02-Mar-20 09:19 PM</span>
+
+            <div class="chatlog__message " data-message-id="684223508284571656" id="message-684223508284571656">
+                <div class="chatlog__content">
+                    <span class="markdown">bump ⤴️</span>
+
+                </div>
+
+
+
+            </div>
+    </div>
+</div><div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/575043340563775518/f1e791016ce4aacdfa8b9e01d30c09d5.png" alt="Avatar" />
+    </div>
+    <div class="chatlog__messages">
+    <span class="chatlog__author-name" title="coltsnid#5946" data-user-id="575043340563775518" style="color: #3FFFB1">coltsnid</span>
+
+
+        <span class="chatlog__timestamp">04-Mar-20 05:53 PM</span>
+
+            <div class="chatlog__message " data-message-id="684896397681754199" id="message-684896397681754199">
+                <div class="chatlog__content">
+                    <span class="markdown"><strong>NOTICE:</strong>
+
+Staff Members are required to maintain activity in their positions, otherwise, they will be demoted.
+
+If you are not able to play for an extended period of time, make sure we are aware and we may let you keep the role until you can play more.
+
+2 Creditors and 1 Mod were demoted in the last day due to inactivity over the past few months.</span>
+
+                </div>
+
+
+
+            </div>
+    </div>
+</div><div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/575043340563775518/f1e791016ce4aacdfa8b9e01d30c09d5.png" alt="Avatar" />
+    </div>
+    <div class="chatlog__messages">
+    <span class="chatlog__author-name" title="coltsnid#5946" data-user-id="575043340563775518" style="color: #3FFFB1">coltsnid</span>
+
+
+        <span class="chatlog__timestamp">06-Mar-20 11:46 PM</span>
+
+            <div class="chatlog__message " data-message-id="685710026564042829" id="message-685710026564042829">
+                <div class="chatlog__content">
+                    <span class="markdown">Reminder: Still giving out VoQueue slots to active staff</span>
+
+                </div>
+
+
+
+            </div>
+    </div>
+</div><div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/575043340563775518/f1e791016ce4aacdfa8b9e01d30c09d5.png" alt="Avatar" />
+    </div>
+    <div class="chatlog__messages">
+    <span class="chatlog__author-name" title="coltsnid#5946" data-user-id="575043340563775518" style="color: #3FFFB1">coltsnid</span>
+
+
+        <span class="chatlog__timestamp">09-Mar-20 02:55 PM</span>
+
+            <div class="chatlog__message " data-message-id="686648323465281576" id="message-686648323465281576">
+                <div class="chatlog__content">
+                    <span class="markdown"><span class="mention" style="color: #2ECC71; background-color: rgba(46, 204, 113, 0.1); font-weight: 400;">@Base Director</span> <strong>NOTICE:</strong>
+
+All Base Directors are now <strong>REQUIRED</strong> to have their base member list approved by Executives <u><em>before</em></u> any members are given coords to a base.
+
+You can create the channel for a base in the new VoCo Bases discord, then tag an Executive with the proposed member list (again, before adding any members).</span>
+
+                        <span class="chatlog__edited-timestamp" title="09-Mar-20 02:55 PM">(edited)</span>
+                </div>
+
+
+
+            </div>
+    </div>
+</div><div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/575043340563775518/f1e791016ce4aacdfa8b9e01d30c09d5.png" alt="Avatar" />
+    </div>
+    <div class="chatlog__messages">
+    <span class="chatlog__author-name" title="coltsnid#5946" data-user-id="575043340563775518" style="color: #3FFFB1">coltsnid</span>
+
+
+        <span class="chatlog__timestamp">19-Mar-20 03:14 AM</span>
+
+            <div class="chatlog__message " data-message-id="690095851804426306" id="message-690095851804426306">
+                <div class="chatlog__content">
+                    <span class="markdown">Congratulations to <span class="mention" title="Nimitz#3674">@Nimitz</span> on his promotion to <span class="mention" style="color: #7DFF8E; background-color: rgba(125, 255, 142, 0.1); font-weight: 400;">@Base Supervisor</span>!</span>
+
+                </div>
+
+
+
+                <div class="chatlog__reactions">
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="gg" title="gg" src="https://cdn.discordapp.com/emojis/544464884402749445.png" />
+                            <span class="chatlog__reaction-count">1</span>
+                        </div>
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="🇫" title="🇫" src="https://twemoji.maxcdn.com/2/72x72/1f1eb.png" />
+                            <span class="chatlog__reaction-count">1</span>
+                        </div>
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="🇦" title="🇦" src="https://twemoji.maxcdn.com/2/72x72/1f1e6.png" />
+                            <span class="chatlog__reaction-count">1</span>
+                        </div>
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="🇹" title="🇹" src="https://twemoji.maxcdn.com/2/72x72/1f1f9.png" />
+                            <span class="chatlog__reaction-count">1</span>
+                        </div>
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="⛏️" title="⛏️" src="https://twemoji.maxcdn.com/2/72x72/26cf.png" />
+                            <span class="chatlog__reaction-count">1</span>
+                        </div>
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="🇾" title="🇾" src="https://twemoji.maxcdn.com/2/72x72/1f1fe.png" />
+                            <span class="chatlog__reaction-count">1</span>
+                        </div>
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="dyatlov" title="dyatlov" src="https://cdn.discordapp.com/emojis/674780971429658641.png" />
+                            <span class="chatlog__reaction-count">1</span>
+                        </div>
+                </div>
+            </div>
+    </div>
+</div>
+</div>
+
+<div class="postamble">
+    <div class="postamble__entry">Exported 103 message(s)</div>
+</div>
+
+</body>
+</html>
